@@ -1,0 +1,884 @@
+Launching language server: /google/devshell/editor/code-oss-for-cloud-shell/extensions/hashicorp.terraform-2.31.0@linux/bin/terraform-ls serve
+Client: Stopped --> Starting
+2024/10/07 13:33:34 serve_command.go:108: Starting terraform-ls 0.33.3
+2024/10/07 13:33:34 service.go:106: Preparing new session ...
+2024/10/07 13:33:34 langserver.go:102: Starting server (pid 2010; concurrency: 2) ...
+2024/10/07 13:33:34 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:34 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:34 rpc_logger.go:32: Incoming request for "initialize" (ID 0): {"processId":1957,"clientInfo":{"name":"Code OSS for Cloud Shell","version":"1.89.1-cde"},"locale":"fr-fr","rootPath":"/home/serignekane01","rootUri":"file:///home/serignekane01","capabilities":{"workspace":{"applyEdit":true,"workspaceEdit":{"documentChanges":true,"resourceOperations":["create","rename","delete"],"failureHandling":"textOnlyTransactional","normalizesLineEndings":true,"changeAnnotationSupport":{"groupsOnLabel":true}},"configuration":true,"didChangeWatchedFiles":{"dynamicRegistration":true,"relativePatternSupport":true},"symbol":{"dynamicRegistration":true,"symbolKind":{"valueSet":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]},"tagSupport":{"valueSet":[1]},"resolveSupport":{"properties":["location.range"]}},"codeLens":{"refreshSupport":true},"executeCommand":{"dynamicRegistration":true},"didChangeConfiguration":{"dynamicRegistration":true},"workspaceFolders":true,"foldingRange":{"refreshSupport":true},"semanticTokens":{"refreshSupport":true},"fileOperations":{"dynamicRegistration":true,"didCreate":true,"didRename":true,"didDelete":true,"willCreate":true,"willRename":true,"willDelete":true},"inlineValue":{"refreshSupport":true},"inlayHint":{"refreshSupport":true},"diagnostics":{"refreshSupport":true}},"textDocument":{"publishDiagnostics":{"relatedInformation":true,"versionSupport":false,"tagSupport":{"valueSet":[1,2]},"codeDescriptionSupport":true,"dataSupport":true},"synchronization":{"dynamicRegistration":true,"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"dynamicRegistration":true,"contextSupport":true,"completionItem":{"snippetSupport":true,"commitCharactersSupport":true,"documentationFormat":["markdown","plaintext"],"deprecatedSupport":true,"preselectSupport":true,"tagSupport":{"valueSet":[1]},"insertReplaceSupport":true,"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"insertTextModeSupport":{"valueSet":[1,2]},"labelDetailsSupport":true},"insertTextMode":2,"completionItemKind":{"valueSet":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]},"completionList":{"itemDefaults":["commitCharacters","editRange","insertTextFormat","insertTextMode","data"]}},"hover":{"dynamicRegistration":true,"contentFormat":["markdown","plaintext"]},"signatureHelp":{"dynamicRegistration":true,"signatureInformation":{"documentationFormat":["markdown","plaintext"],"parameterInformation":{"labelOffsetSupport":true},"activeParameterSupport":true},"contextSupport":true},"definition":{"dynamicRegistration":true,"linkSupport":true},"references":{"dynamicRegistration":true},"documentHighlight":{"dynamicRegistration":true},"documentSymbol":{"dynamicRegistration":true,"symbolKind":{"valueSet":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]},"hierarchicalDocumentSymbolSupport":true,"tagSupport":{"valueSet":[1]},"labelSupport":true},"codeAction":{"dynamicRegistration":true,"isPreferredSupport":true,"disabledSupport":true,"dataSupport":true,"resolveSupport":{"properties":["edit"]},"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["","quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}},"honorsChangeAnnotations":true},"codeLens":{"dynamicRegistration":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{"dynamicRegistration":true,"rangesSupport":true},"onTypeFormatting":{"dynamicRegistration":true},"rename":{"dynamicRegistration":true,"prepareSupport":true,"prepareSupportDefaultBehavior":1,"honorsChangeAnnotations":true},"documentLink":{"dynamicRegistration":true,"tooltipSupport":true},"typeDefinition":{"dynamicRegistration":true,"linkSupport":true},"implementation":{"dynamicRegistration":true,"linkSupport":true},"colorProvider":{"dynamicRegistration":true},"foldingRange":{"dynamicRegistration":true,"rangeLimit":5000,"lineFoldingOnly":true,"foldingRangeKind":{"valueSet":["comment","imports","region"]},"foldingRange":{"collapsedText":false}},"declaration":{"dynamicRegistration":true,"linkSupport":true},"selectionRange":{"dynamicRegistration":true},"callHierarchy":{"dynamicRegistration":true},"semanticTokens":{"dynamicRegistration":true,"tokenTypes":["namespace","type","class","enum","interface","struct","typeParameter","parameter","variable","property","enumMember","event","function","method","macro","keyword","modifier","comment","string","number","regexp","operator","decorator","hcl-attrName","hcl-blockType","hcl-blockLabel","hcl-bool","hcl-string","hcl-number","hcl-objectKey","hcl-mapKey","hcl-keyword","hcl-referenceStep","hcl-typeComplex","hcl-typePrimitive","hcl-functionName"],"tokenModifiers":["declaration","definition","readonly","static","deprecated","abstract","async","modification","documentation","defaultLibrary","hcl-dependent","terraform-data","terraform-locals","terraform-module","terraform-output","terraform-provider","terraform-resource","terraform-provisioner","terraform-connection","terraform-variable","terraform-terraform","terraform-backend","terraform-name","terraform-type","terraform-requiredProviders"],"formats":["relative"],"requests":{"range":true,"full":{"delta":true}},"multilineTokenSupport":false,"overlappingTokenSupport":false,"serverCancelSupport":true,"augmentsSyntaxTokens":true},"linkedEditingRange":{"dynamicRegistration":true},"typeHierarchy":{"dynamicRegistration":true},"inlineValue":{"dynamicRegistration":true},"inlayHint":{"dynamicRegistration":true,"resolveSupport":{"properties":["tooltip","textEdits","label.tooltip","label.location","label.command"]}},"diagnostic":{"dynamicRegistration":true,"relatedDocumentSupport":false}},"window":{"showMessage":{"messageActionItem":{"additionalPropertiesSupport":true}},"showDocument":{"support":true},"workDoneProgress":true},"general":{"staleRequestSupport":{"cancel":true,"retryOnContentModified":["textDocument/semanticTokens/full","textDocument/semanticTokens/range","textDocument/semanticTokens/full/delta"]},"regularExpressions":{"engine":"ECMAScript","version":"ES2020"},"markdown":{"parser":"marked","version":"1.1.0"},"positionEncodings":["utf-16"]},"notebookDocument":{"synchronization":{"dynamicRegistration":true,"executionSummarySupport":true}},"experimental":{"refreshModuleProvidersCommandId":"client.refreshModuleProviders","refreshModuleCallsCommandId":"client.refreshModuleCalls","telemetryVersion":1,"refreshTerraformVersionCommandId":"client.refreshTerraformVersion"}},"initializationOptions":{"validation":{"enableEnhancedValidation":true},"experimentalFeatures":{"validateOnSave":false,"prefillRequiredFields":false},"ignoreSingleFileWarning":false,"terraform":{"path":"","timeout":"","logFilePath":""},"indexing":{"ignorePaths":[],"ignoreDirectoryNames":[]}},"trace":"off","workspaceFolders":[{"uri":"file:///home/serignekane01","name":"serignekane01"}],"workDoneToken":"7c10dfcf-eac6-47b8-afa2-ff3951bfb7a6"}
+2024/10/07 13:33:34 initialize.go:185: enabling telemetry (version: 1)
+2024/10/07 13:33:34 initialize.go:190: telemetry enabled (version: 1)
+2024/10/07 13:33:34 scheduler.go:56: launching eval loop 0
+2024/10/07 13:33:34 service.go:482: started low priority scheduler
+2024/10/07 13:33:34 scheduler.go:56: launching eval loop 0
+2024/10/07 13:33:34 service.go:487: started high priority scheduler
+2024/10/07 13:33:34 opts.go:215: Posting server notification "telemetry/event" {"v":1,"name":"initialize","properties":{"experimentalCapabilities.referenceCountCodeLens":false,"experimentalCapabilities.refreshModuleCalls":true,"experimentalCapabilities.refreshModuleProviders":true,"experimentalCapabilities.refreshTerraformVersion":true,"lsVersion":"0.33.3","options.commandPrefix":false,"options.excludeModulePaths":false,"options.experimentalFeatures.prefillRequiredFields":false,"options.experimentalFeatures.validateOnSave":false,"options.ignoreSingleFileWarning":false,"options.indexing.ignoreDirectoryNames":false,"options.indexing.ignorePaths":false,"options.rootModulePaths":false,"options.terraform.logFilePath":false,"options.terraform.path":false,"options.terraform.timeout":"","options.validation.earlyValidation":true,"root_uri":"dir"}}
+2024/10/07 13:33:34 rpc_logger.go:53: Response to "initialize" (ID 0): {"capabilities":{"textDocumentSync":{"openClose":true,"change":2,"save":{}},"completionProvider":{"triggerCharacters":[".","["],"resolveProvider":true},"hoverProvider":true,"signatureHelpProvider":{"triggerCharacters":["(",","]},"declarationProvider":true,"definitionProvider":true,"referencesProvider":true,"documentSymbolProvider":true,"codeActionProvider":{"codeActionKinds":["source.formatAll.terraform"]},"codeLensProvider":{},"documentLinkProvider":{},"workspaceSymbolProvider":true,"documentFormattingProvider":true,"executeCommandProvider":{"commands":["terraform-ls.module.callers","terraform-ls.module.calls","terraform-ls.module.providers","terraform-ls.module.terraform","terraform-ls.rootmodules","terraform-ls.terraform.init","terraform-ls.terraform.validate"],"workDoneProgress":true},"semanticTokensProvider":{"legend":{"tokenTypes":["enumMember","function","keyword","number","parameter","property","string","type","variable","hcl-attrName","hcl-blockType","hcl-blockLabel","hcl-bool","hcl-string","hcl-number","hcl-objectKey","hcl-mapKey","hcl-keyword","hcl-referenceStep","hcl-typeComplex","hcl-typePrimitive","hcl-functionName"],"tokenModifiers":["defaultLibrary","hcl-dependent","terraform-backend","terraform-connection","terraform-data","terraform-locals","terraform-module","terraform-name","terraform-output","terraform-provider","terraform-provisioner","terraform-requiredProviders","terraform-resource","terraform-terraform","terraform-type","terraform-variable"]},"full":true},"workspace":{"workspaceFolders":{"supported":true,"changeNotifications":"workspace/didChangeWorkspaceFolders"},"fileOperations":{}},"experimental":{"referenceCountCodeLens":false,"refreshModuleProviders":true,"refreshModuleCalls":true,"refreshTerraformVersion":true}},"serverInfo":{"name":"terraform-ls","version":"0.33.3"}}
+2024/10/07 13:33:34 opts.go:215: Completed 1 requests [5.139664ms elapsed]
+2024/10/07 13:33:34 walker_paths.go:255: walking next dir: {"file:///home/serignekane01"}
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/CachedProfilesData/__default__profile__} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/CachedProfilesData} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/Machine} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/User/History} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/User/globalStorage} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/User/workspaceStorage/-440ac96f} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/User/workspaceStorage} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/User} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/logs/20241007T133311/exthost1/hashicorp.terraform} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/logs/20241007T133311/exthost1/output_logging_20241007T133331} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/logs/20241007T133311/exthost1/vscode.git} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/logs/20241007T133311/exthost1/vscode.github} finished
+Client: Starting --> Running
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/logs/20241007T133311/exthost1} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/logs/20241007T133311} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data/logs} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/data} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss/extensions} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.codeoss} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.config/powershell} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.config} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.docker} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.npm/_logs} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.npm} finished
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01/.terraform.d} finished
+2024/10/07 13:33:34 walker.go:212: skipping ignored dir name: .vscode
+2024/10/07 13:33:34 walker.go:218: found module {file:///home/serignekane01}
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "1": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"} (IsDirOpen: false, IgnoreState: false)
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "2": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"} (IsDirOpen: false, IgnoreState: false)
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+Started client
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "3": "OpTypeParseVariables" for {"file:///home/serignekane01"} (IsDirOpen: false, IgnoreState: false)
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "4": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"} (IsDirOpen: false, IgnoreState: false)
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 walker.go:91: parsed datadir: &datadir.DataDir{ModuleManifestPath:"", PluginLockFilePath:""}
+2024/10/07 13:33:34 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:34 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 rpc_logger.go:32: Incoming notification for "initialized": {}
+2024/10/07 13:33:34 jobs.go:321: JOBS: Dispatching next job "1" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"}
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "5": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"} (IsDirOpen: false, IgnoreState: false)
+2024/10/07 13:33:34 opts.go:215: Posting server call "client/registerCapability" {"registrations":[{"id":"2658c904-1a21-8a69-3383-016590fd255a","method":"workspace/didChangeWatchedFiles","registerOptions":{"watchers":[{"globPattern":"**/.terraform","kind":3},{"globPattern":"**/.terraform/modules/modules.json"},{"globPattern":"**/.terraform.lock.hcl"},{"globPattern":"**/.terraform/plugins/selections.json"},{"globPattern":"**/.terraform/plugins/linux_amd64/lock.json"}]}}]}
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "6": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"} (IsDirOpen: false, IgnoreState: false)
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "7": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"} (IsDirOpen: false, IgnoreState: false)
+2024/10/07 13:33:34 walker.go:242: walking of {file:///home/serignekane01} finished
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 walker.go:156: walker: walking through {"file:///home/serignekane01"} finished
+2024/10/07 13:33:34 jobs.go:461: JOBS: Finishing job "1": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:321: JOBS: Dispatching next job "2" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"}
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:461: JOBS: Finishing job "2": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:321: JOBS: Dispatching next job "3" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeParseVariables" for {"file:///home/serignekane01"}
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:461: JOBS: Finishing job "3": "OpTypeParseVariables" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:321: JOBS: Dispatching next job "4" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"}
+2024/10/07 13:33:34 jobs.go:461: JOBS: Finishing job "4": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:321: JOBS: Dispatching next job "5" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"}
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:461: JOBS: Finishing job "5": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:321: JOBS: Dispatching next job "6" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"}
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:34 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:34 opts.go:215: Received response for callback "1"
+2024/10/07 13:33:34 rpc_logger.go:32: Incoming notification for "textDocument/didOpen": {"textDocument":{"uri":"file:///home/serignekane01/instance.tf","languageId":"terraform","version":1,"text":""}}
+2024/10/07 13:33:34 jobs.go:461: JOBS: Finishing job "6": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:321: JOBS: Dispatching next job "7" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"}
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 did_open.go:56: opened module: /home/serignekane01
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "8": "OpTypeGetTerraformVersion" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: false)
+2024/10/07 13:33:34 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "9": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "10": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "11": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: false)
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "12": "OpTypeParseVariables" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "13": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:33:34 jobs.go:140: JOBS: Enqueueing new job "14": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: false)
+2024/10/07 13:33:34 jobs.go:321: JOBS: Dispatching next job "8" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeGetTerraformVersion" for {"file:///home/serignekane01"}
+2024/10/07 13:33:34 jobs.go:461: JOBS: Finishing job "7": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:34 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:34 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:34 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "8": "OpTypeGetTerraformVersion" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "12" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeParseVariables" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "12": "OpTypeParseVariables" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "14" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "14": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"} (err = file:///home/serignekane01: state not changed, deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "9" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "9": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "10" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 module_calls.go:64: indexing declared module calls for "file:///home/serignekane01": 0
+2024/10/07 13:33:35 jobs.go:140: JOBS: Enqueueing new job "15": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:33:35 jobs.go:140: JOBS: Enqueueing new job "16": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:33:35 jobs.go:140: JOBS: Enqueueing new job "17": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:33:35 jobs.go:140: JOBS: Enqueueing new job "18": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:33:35 jobs.go:140: JOBS: Enqueueing new job "19": "OpTypeReferenceValidation" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "10": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: ["15" "17" "18"])
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "13" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "11" (scheduler prio: -1, job prio: -1, isDirOpen: true): "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "11": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "13": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "15" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "15": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "16" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "16": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "17" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "17": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "18" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "18": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 jobs.go:321: JOBS: Dispatching next job "19" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeReferenceValidation" for {"file:///home/serignekane01"}
+2024/10/07 13:33:35 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 1): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:35 rpc_logger.go:32: Incoming request for "textDocument/documentLink" (ID 2): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:35 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 1): []
+2024/10/07 13:33:35 opts.go:215: Completed 1 requests [198.963439ms elapsed]
+2024/10/07 13:33:35 jobs.go:461: JOBS: Finishing job "19": "OpTypeReferenceValidation" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:33:35 jobs.go:299: retrying on obj is nil
+2024/10/07 13:33:35 opts.go:215: Posting server notification "telemetry/event" {"v":1,"name":"moduleData","properties":{"moduleId":"0dd263eb-4a1e-2587-740c-da325b1c92ca","tfVersion":"1.5.7"}}
+2024/10/07 13:33:35 opts.go:215: Posting server call "client.refreshModuleProviders" 
+2024/10/07 13:33:35 rpc_logger.go:53: Response to "textDocument/documentLink" (ID 2): []
+2024/10/07 13:33:35 opts.go:215: Completed 1 requests [3.070939ms elapsed]
+2024/10/07 13:33:35 opts.go:215: Received response for callback "2"
+2024/10/07 13:33:35 opts.go:215: Posting server call "client.refreshModuleCalls" 
+2024/10/07 13:33:35 opts.go:215: Received response for callback "3"
+2024/10/07 13:33:35 opts.go:215: Posting server call "client.refreshTerraformVersion" 
+2024/10/07 13:33:35 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:35 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:35 rpc_logger.go:32: Incoming request for "workspace/executeCommand" (ID 3): {"command":"terraform-ls.module.terraform","arguments":["uri=file:///home/serignekane01"]}
+2024/10/07 13:33:35 rpc_logger.go:53: Response to "workspace/executeCommand" (ID 3): {"v":0,"discovered_version":"1.5.7"}
+2024/10/07 13:33:35 opts.go:215: Completed 1 requests [351.596µs elapsed]
+2024/10/07 13:33:35 opts.go:215: Received response for callback "4"
+2024/10/07 13:33:35 opts.go:215: Posting server call "workspace/semanticTokens/refresh" 
+2024/10/07 13:33:35 opts.go:215: Received response for callback "5"
+2024/10/07 13:33:35 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:35 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:35 rpc_logger.go:32: Incoming request for "textDocument/semanticTokens/full" (ID 4): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:35 rpc_logger.go:53: Response to "textDocument/semanticTokens/full" (ID 4): {"data":[]}
+2024/10/07 13:33:35 opts.go:215: Completed 1 requests [3.020072ms elapsed]
+2024/10/07 13:33:35 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:35 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:35 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 5): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:35 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 5): []
+2024/10/07 13:33:35 opts.go:215: Completed 1 requests [1.573556ms elapsed]
+2024/10/07 13:33:35 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:35 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:35 opts.go:215: Request check error for "$/setTrace" (params "{\"value\":\"off\"}"): [-32601] method not found
+2024/10/07 13:33:35 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:35 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:35 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 6): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:35 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 6): []
+2024/10/07 13:33:35 opts.go:215: Completed 1 requests [2.858059ms elapsed]
+2024/10/07 13:33:38 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:38 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:38 opts.go:215: Request check error for "$/setTrace" (params "{\"value\":\"off\"}"): [-32601] method not found
+2024/10/07 13:33:39 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:39 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:39 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 7): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:39 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 7): []
+2024/10/07 13:33:39 opts.go:215: Completed 1 requests [1.840325ms elapsed]
+2024/10/07 13:33:39 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:39 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:39 rpc_logger.go:32: Incoming request for "textDocument/documentLink" (ID 8): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:39 rpc_logger.go:53: Response to "textDocument/documentLink" (ID 8): []
+2024/10/07 13:33:39 opts.go:215: Completed 1 requests [3.684454ms elapsed]
+2024/10/07 13:33:40 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:40 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:40 rpc_logger.go:32: Incoming request for "textDocument/documentLink" (ID 9): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:40 rpc_logger.go:53: Response to "textDocument/documentLink" (ID 9): []
+2024/10/07 13:33:40 opts.go:215: Completed 1 requests [1.825389ms elapsed]
+2024/10/07 13:33:40 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:40 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:40 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 10): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:40 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 10): []
+2024/10/07 13:33:40 opts.go:215: Completed 1 requests [1.680252ms elapsed]
+2024/10/07 13:33:41 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:41 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:41 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 11): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:41 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 11): []
+2024/10/07 13:33:41 opts.go:215: Completed 1 requests [1.8993ms elapsed]
+2024/10/07 13:33:43 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:43 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:43 rpc_logger.go:32: Incoming request for "textDocument/documentLink" (ID 12): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:43 rpc_logger.go:53: Response to "textDocument/documentLink" (ID 12): []
+2024/10/07 13:33:43 opts.go:215: Completed 1 requests [1.856499ms elapsed]
+2024/10/07 13:33:43 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:43 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:43 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 13): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:43 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 13): []
+2024/10/07 13:33:43 opts.go:215: Completed 1 requests [3.080679ms elapsed]
+2024/10/07 13:33:43 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:33:43 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:33:43 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 14): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:33:43 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 14): []
+2024/10/07 13:33:43 opts.go:215: Completed 1 requests [1.722092ms elapsed]
+2024/10/07 13:38:46 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:46 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:46 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 15): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:38:46 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 15): []
+2024/10/07 13:38:46 opts.go:215: Completed 1 requests [1.635603ms elapsed]
+2024/10/07 13:38:48 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:48 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:48 rpc_logger.go:32: Incoming notification for "textDocument/didChange": {"textDocument":{"uri":"file:///home/serignekane01/instance.tf","version":2},"contentChanges":[{"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":0}},"rangeLength":0,"text":"resource \"google_compute_instance\" \"terraform\" {\n  project      = \"\"\n  name         = \"terraform\"\n  machine_type = \"e2-medium\"\n  zone         = \"\"\n\n  boot_disk {\n    initialize_params {\n      image = \"debian-cloud/debian-11\"\n    }\n  }\n\n  network_interface {\n    network = \"default\"\n    access_config {\n    }\n  }\n}"}]}
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "20": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "21": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "22": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: false)
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "23": "OpTypeParseVariables" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "24": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "25": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:321: JOBS: Dispatching next job "20" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"}
+2024/10/07 13:38:48 jobs.go:461: JOBS: Finishing job "20": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:48 jobs.go:321: JOBS: Dispatching next job "21" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"}
+2024/10/07 13:38:48 module_calls.go:64: indexing declared module calls for "file:///home/serignekane01": 0
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "26": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "27": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "28": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "29": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:140: JOBS: Enqueueing new job "30": "OpTypeReferenceValidation" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:38:48 jobs.go:461: JOBS: Finishing job "21": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: ["26" "28" "29"])
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:321: JOBS: Dispatching next job "23" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeParseVariables" for {"file:///home/serignekane01"}
+2024/10/07 13:38:48 jobs.go:321: JOBS: Dispatching next job "22" (scheduler prio: -1, job prio: -1, isDirOpen: true): "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01"}
+2024/10/07 13:38:48 jobs.go:461: JOBS: Finishing job "22": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:48 jobs.go:461: JOBS: Finishing job "23": "OpTypeParseVariables" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:321: JOBS: Dispatching next job "24" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01"}
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:461: JOBS: Finishing job "24": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:321: JOBS: Dispatching next job "25" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"}
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:461: JOBS: Finishing job "25": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:48 jobs.go:321: JOBS: Dispatching next job "26" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"}
+2024/10/07 13:38:48 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:49 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:49 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:49 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:49 opts.go:215: Received request batch of size 1 (qlen=1)
+2024/10/07 13:38:49 opts.go:215: Received request batch of size 1 (qlen=2)
+2024/10/07 13:38:49 module_ops.go:368: preloaded schema for registry.terraform.io/hashicorp/google 5.35.0 in 312.244329ms
+2024/10/07 13:38:49 jobs.go:461: JOBS: Finishing job "26": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:49 jobs.go:321: JOBS: Dispatching next job "27" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01"}
+2024/10/07 13:38:49 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:49 jobs.go:461: JOBS: Finishing job "27": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:49 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:49 jobs.go:321: JOBS: Dispatching next job "28" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"}
+2024/10/07 13:38:49 jobs.go:461: JOBS: Finishing job "28": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:49 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:49 jobs.go:321: JOBS: Dispatching next job "29" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"}
+2024/10/07 13:38:49 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:49 jobs.go:461: JOBS: Finishing job "29": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:49 jobs.go:321: JOBS: Dispatching next job "30" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeReferenceValidation" for {"file:///home/serignekane01"}
+2024/10/07 13:38:49 opts.go:215: Dequeued request batch of length 1 (qlen=2)
+2024/10/07 13:38:49 opts.go:215: Dequeued request batch of length 1 (qlen=1)
+2024/10/07 13:38:49 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:49 rpc_logger.go:32: Incoming request for "textDocument/semanticTokens/full" (ID 16): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:38:49 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 19): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:38:49 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:49 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 19): []
+2024/10/07 13:38:49 opts.go:215: Completed 1 requests [7.244992ms elapsed]
+2024/10/07 13:38:49 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 17): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:38:49 jobs.go:461: JOBS: Finishing job "30": "OpTypeReferenceValidation" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:38:49 rpc_logger.go:53: Response to "textDocument/semanticTokens/full" (ID 16): {"data":[0,0,8,10,4096,0,9,25,11,20482,0,26,11,11,4224,1,2,7,9,4096,0,15,2,13,0,1,2,4,9,4096,0,15,11,13,0,1,2,12,9,4096,0,15,11,13,0,1,2,4,9,4096,0,15,2,13,0,2,2,9,10,4096,1,4,17,10,4096,1,6,5,9,4096,0,8,24,13,0,4,2,17,10,4096,1,4,7,9,4096,0,10,9,13,0,1,4,13,10,4096]}
+2024/10/07 13:38:49 opts.go:215: Completed 1 requests [60.171201ms elapsed]
+2024/10/07 13:38:49 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 18): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:38:49 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:49 opts.go:215: Posting server notification "telemetry/event" {"v":1,"name":"moduleData","properties":{"moduleId":"0dd263eb-4a1e-2587-740c-da325b1c92ca","providerRequirements":{"registry.terraform.io/-/google":""},"tfVersion":"1.5.7"}}
+2024/10/07 13:38:49 opts.go:215: Posting server call "client.refreshModuleProviders" 
+2024/10/07 13:38:49 opts.go:215: Received response for callback "6"
+2024/10/07 13:38:49 opts.go:215: Posting server call "client.refreshModuleCalls" 
+2024/10/07 13:38:49 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 17): [{"name":"resource \"google_compute_instance\" \"terraform\"","kind":5,"range":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"selectionRange":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"children":[{"name":"project","kind":15,"range":{"start":{"line":1,"character":2},"end":{"line":1,"character":19}},"selectionRange":{"start":{"line":1,"character":2},"end":{"line":1,"character":19}}},{"name":"name","kind":15,"range":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}},"selectionRange":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}}},{"name":"machine_type","kind":15,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}},"selectionRange":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}}},{"name":"zone","kind":15,"range":{"start":{"line":4,"character":2},"end":{"line":4,"character":19}},"selectionRange":{"start":{"line":4,"character":2},"end":{"line":4,"character":19}}},{"name":"boot_disk","kind":5,"range":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"selectionRange":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"children":[{"name":"initialize_params","kind":5,"range":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"selectionRange":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"children":[{"name":"image","kind":15,"range":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}},"selectionRange":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}}}]}]},{"name":"network_interface","kind":5,"range":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"selectionRange":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"children":[{"name":"network","kind":15,"range":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}},"selectionRange":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}}},{"name":"access_config","kind":5,"range":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}},"selectionRange":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}}}]}]}]
+2024/10/07 13:38:49 opts.go:215: Completed 1 requests [29.281088ms elapsed]
+2024/10/07 13:38:49 opts.go:215: Received response for callback "7"
+2024/10/07 13:38:49 opts.go:215: Posting server call "client.refreshTerraformVersion" 
+2024/10/07 13:38:49 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 18): [{"name":"resource \"google_compute_instance\" \"terraform\"","kind":5,"range":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"selectionRange":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"children":[{"name":"project","kind":15,"range":{"start":{"line":1,"character":2},"end":{"line":1,"character":19}},"selectionRange":{"start":{"line":1,"character":2},"end":{"line":1,"character":19}}},{"name":"name","kind":15,"range":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}},"selectionRange":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}}},{"name":"machine_type","kind":15,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}},"selectionRange":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}}},{"name":"zone","kind":15,"range":{"start":{"line":4,"character":2},"end":{"line":4,"character":19}},"selectionRange":{"start":{"line":4,"character":2},"end":{"line":4,"character":19}}},{"name":"boot_disk","kind":5,"range":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"selectionRange":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"children":[{"name":"initialize_params","kind":5,"range":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"selectionRange":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"children":[{"name":"image","kind":15,"range":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}},"selectionRange":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}}}]}]},{"name":"network_interface","kind":5,"range":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"selectionRange":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"children":[{"name":"network","kind":15,"range":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}},"selectionRange":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}}},{"name":"access_config","kind":5,"range":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}},"selectionRange":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}}}]}]}]
+2024/10/07 13:38:49 opts.go:215: Completed 1 requests [30.133272ms elapsed]
+2024/10/07 13:38:49 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:49 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:49 rpc_logger.go:32: Incoming request for "workspace/executeCommand" (ID 20): {"command":"terraform-ls.module.terraform","arguments":["uri=file:///home/serignekane01"]}
+2024/10/07 13:38:49 rpc_logger.go:53: Response to "workspace/executeCommand" (ID 20): {"v":0,"discovered_version":"1.5.7"}
+2024/10/07 13:38:49 opts.go:215: Completed 1 requests [249.337µs elapsed]
+2024/10/07 13:38:49 opts.go:215: Received response for callback "8"
+2024/10/07 13:38:49 opts.go:215: Posting server call "workspace/semanticTokens/refresh" 
+2024/10/07 13:38:49 opts.go:215: Received response for callback "9"
+2024/10/07 13:38:49 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:49 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:49 rpc_logger.go:32: Incoming request for "textDocument/semanticTokens/full" (ID 21): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:38:49 rpc_logger.go:53: Response to "textDocument/semanticTokens/full" (ID 21): {"data":[0,0,8,10,4096,0,9,25,11,20482,0,26,11,11,4224,1,2,7,9,4096,0,15,2,13,0,1,2,4,9,4096,0,15,11,13,0,1,2,12,9,4096,0,15,11,13,0,1,2,4,9,4096,0,15,2,13,0,2,2,9,10,4096,1,4,17,10,4096,1,6,5,9,4096,0,8,24,13,0,4,2,17,10,4096,1,4,7,9,4096,0,10,9,13,0,1,4,13,10,4096]}
+2024/10/07 13:38:49 opts.go:215: Completed 1 requests [6.924058ms elapsed]
+2024/10/07 13:38:49 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:49 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:49 rpc_logger.go:32: Incoming request for "textDocument/documentLink" (ID 22): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:38:49 rpc_logger.go:53: Response to "textDocument/documentLink" (ID 22): []
+2024/10/07 13:38:49 opts.go:215: Completed 1 requests [8.851499ms elapsed]
+2024/10/07 13:38:49 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:49 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:49 rpc_logger.go:32: Incoming notification for "textDocument/didSave": {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:38:50 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:50 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:50 rpc_logger.go:32: Incoming notification for "workspace/didChangeWatchedFiles": {"changes":[{"uri":"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed/xVZY.tf","type":1},{"uri":"file:///home/serignekane01/instance.tf","type":2}]}
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "31": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "32": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "33": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: false)
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "34": "OpTypeParseVariables" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "35": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "36": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 did_change_watched_files.go:159: document is open - ignoring event for "file:///home/serignekane01/instance.tf"
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "31" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "31": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "32" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 document_change.go:112: loading module metadata returned error: /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 document_change.go:117: decoding declared module calls for "file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed" failed: /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "37": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "38": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "39": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "40": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:140: JOBS: Enqueueing new job "41": "OpTypeReferenceValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "32": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: ["37" "39" "40"])
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "33" (scheduler prio: -1, job prio: -1, isDirOpen: false): "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "33": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "34" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeParseVariables" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "34": "OpTypeParseVariables" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "35" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "35": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "36" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "36": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "37" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "37": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "38" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "38": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "39" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "39": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "40" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "40": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:50 jobs.go:321: JOBS: Dispatching next job "41" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeReferenceValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:38:50 jobs.go:461: JOBS: Finishing job "41": "OpTypeReferenceValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:38:50 jobs.go:299: retrying on obj is nil
+2024/10/07 13:38:57 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:57 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:57 rpc_logger.go:32: Incoming request for "textDocument/hover" (ID 23): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"},"position":{"line":8,"character":32}}
+2024/10/07 13:38:57 hover.go:35: Looking for hover data at "instance.tf" -> hcl.Pos{Line:9, Column:33, Byte:218}
+2024/10/07 13:38:57 hover.go:37: received hover data: &lang.HoverData{Content:lang.MarkupContent{Value:"_string_", Kind:0x2}, Range:hcl.Range{Filename:"instance.tf", Start:hcl.Pos{Line:9, Column:15, Byte:200}, End:hcl.Pos{Line:9, Column:39, Byte:224}}}
+2024/10/07 13:38:57 rpc_logger.go:53: Response to "textDocument/hover" (ID 23): {"contents":{"kind":"markdown","value":"_string_"},"range":{"start":{"line":8,"character":14},"end":{"line":8,"character":38}}}
+2024/10/07 13:38:57 opts.go:215: Completed 1 requests [8.56222ms elapsed]
+2024/10/07 13:38:58 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:58 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:58 rpc_logger.go:32: Incoming request for "textDocument/hover" (ID 24): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"},"position":{"line":2,"character":28}}
+2024/10/07 13:38:58 hover.go:35: Looking for hover data at "instance.tf" -> hcl.Pos{Line:3, Column:29, Byte:97}
+2024/10/07 13:38:58 hover.go:37: received hover data: (*lang.HoverData)(nil)
+2024/10/07 13:38:58 rpc_logger.go:48: Error for "textDocument/hover" (ID 24): [-32098] instance.tf (3,29): position outside of any attribute name, value or block
+2024/10/07 13:38:58 opts.go:215: Completed 1 requests [6.224776ms elapsed]
+[Error - 1:38:58 PM] Request textDocument/hover failed.
+  Message: instance.tf (3,29): position outside of any attribute name, value or block
+  Code: -32098 
+2024/10/07 13:38:58 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:38:58 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:38:58 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 25): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:38:58 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 25): []
+2024/10/07 13:38:58 opts.go:215: Completed 1 requests [6.189693ms elapsed]
+2024/10/07 13:39:00 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:00 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:00 rpc_logger.go:32: Incoming request for "textDocument/hover" (ID 26): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"},"position":{"line":0,"character":42}}
+2024/10/07 13:39:00 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:00 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:00 rpc_logger.go:32: Incoming notification for "$/cancelRequest": {"id":26}
+2024/10/07 13:39:00 opts.go:215: Cancelled request 26 by client order
+2024/10/07 13:39:00 hover.go:35: Looking for hover data at "instance.tf" -> hcl.Pos{Line:1, Column:43, Byte:42}
+2024/10/07 13:39:00 hover.go:37: received hover data: &lang.HoverData{Content:lang.MarkupContent{Value:"\"terraform\" (name)\n\nReference Name", Kind:0x2}, Range:hcl.Range{Filename:"instance.tf", Start:hcl.Pos{Line:1, Column:36, Byte:35}, End:hcl.Pos{Line:1, Column:47, Byte:46}}}
+2024/10/07 13:39:00 rpc_logger.go:48: Error for "textDocument/hover" (ID 26): [-32800] error code -32800: %!s(<nil>)
+2024/10/07 13:39:00 opts.go:215: Completed 1 requests [10.490849ms elapsed]
+2024/10/07 13:39:00 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:00 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:00 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 27): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:00 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 27): []
+2024/10/07 13:39:00 opts.go:215: Completed 1 requests [15.650008ms elapsed]
+2024/10/07 13:39:01 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:01 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:01 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 28): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:01 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 28): []
+2024/10/07 13:39:01 opts.go:215: Completed 1 requests [8.515072ms elapsed]
+2024/10/07 13:39:14 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:14 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:14 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 29): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:14 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 29): []
+2024/10/07 13:39:14 opts.go:215: Completed 1 requests [7.297815ms elapsed]
+2024/10/07 13:39:20 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:20 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:20 rpc_logger.go:32: Incoming request for "textDocument/documentLink" (ID 30): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:20 rpc_logger.go:53: Response to "textDocument/documentLink" (ID 30): []
+2024/10/07 13:39:20 opts.go:215: Completed 1 requests [7.63025ms elapsed]
+2024/10/07 13:39:20 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:20 opts.go:215: Received request batch of size 1 (qlen=1)
+2024/10/07 13:39:20 opts.go:215: Dequeued request batch of length 1 (qlen=1)
+2024/10/07 13:39:20 rpc_logger.go:32: Incoming request for "textDocument/semanticTokens/full" (ID 31): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:20 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:20 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 32): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:20 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 32): [{"name":"resource \"google_compute_instance\" \"terraform\"","kind":5,"range":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"selectionRange":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"children":[{"name":"project","kind":15,"range":{"start":{"line":1,"character":2},"end":{"line":1,"character":19}},"selectionRange":{"start":{"line":1,"character":2},"end":{"line":1,"character":19}}},{"name":"name","kind":15,"range":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}},"selectionRange":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}}},{"name":"machine_type","kind":15,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}},"selectionRange":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}}},{"name":"zone","kind":15,"range":{"start":{"line":4,"character":2},"end":{"line":4,"character":19}},"selectionRange":{"start":{"line":4,"character":2},"end":{"line":4,"character":19}}},{"name":"boot_disk","kind":5,"range":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"selectionRange":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"children":[{"name":"initialize_params","kind":5,"range":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"selectionRange":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"children":[{"name":"image","kind":15,"range":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}},"selectionRange":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}}}]}]},{"name":"network_interface","kind":5,"range":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"selectionRange":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"children":[{"name":"network","kind":15,"range":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}},"selectionRange":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}}},{"name":"access_config","kind":5,"range":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}},"selectionRange":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}}}]}]}]
+2024/10/07 13:39:20 opts.go:215: Completed 1 requests [11.082933ms elapsed]
+2024/10/07 13:39:20 rpc_logger.go:53: Response to "textDocument/semanticTokens/full" (ID 31): {"data":[0,0,8,10,4096,0,9,25,11,20482,0,26,11,11,4224,1,2,7,9,4096,0,15,2,13,0,1,2,4,9,4096,0,15,11,13,0,1,2,12,9,4096,0,15,11,13,0,1,2,4,9,4096,0,15,2,13,0,2,2,9,10,4096,1,4,17,10,4096,1,6,5,9,4096,0,8,24,13,0,4,2,17,10,4096,1,4,7,9,4096,0,10,9,13,0,1,4,13,10,4096]}
+2024/10/07 13:39:20 opts.go:215: Completed 1 requests [11.397606ms elapsed]
+2024/10/07 13:39:20 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:20 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:20 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 33): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:20 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 33): []
+2024/10/07 13:39:20 opts.go:215: Completed 1 requests [16.422541ms elapsed]
+2024/10/07 13:39:25 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:25 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:25 rpc_logger.go:32: Incoming request for "textDocument/documentLink" (ID 34): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:25 rpc_logger.go:53: Response to "textDocument/documentLink" (ID 34): []
+2024/10/07 13:39:25 opts.go:215: Completed 1 requests [7.993017ms elapsed]
+2024/10/07 13:39:25 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:25 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:25 rpc_logger.go:32: Incoming request for "textDocument/semanticTokens/full" (ID 35): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:25 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:25 opts.go:215: Received request batch of size 1 (qlen=1)
+2024/10/07 13:39:25 opts.go:215: Dequeued request batch of length 1 (qlen=1)
+2024/10/07 13:39:25 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:25 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 37): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:25 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 37): []
+2024/10/07 13:39:25 opts.go:215: Completed 1 requests [6.891496ms elapsed]
+2024/10/07 13:39:25 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 36): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:25 rpc_logger.go:53: Response to "textDocument/semanticTokens/full" (ID 35): {"data":[0,0,8,10,4096,0,9,25,11,20482,0,26,11,11,4224,1,2,7,9,4096,0,15,2,13,0,1,2,4,9,4096,0,15,11,13,0,1,2,12,9,4096,0,15,11,13,0,1,2,4,9,4096,0,15,2,13,0,2,2,9,10,4096,1,4,17,10,4096,1,6,5,9,4096,0,8,24,13,0,4,2,17,10,4096,1,4,7,9,4096,0,10,9,13,0,1,4,13,10,4096]}
+2024/10/07 13:39:25 opts.go:215: Completed 1 requests [9.680864ms elapsed]
+2024/10/07 13:39:25 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 36): [{"name":"resource \"google_compute_instance\" \"terraform\"","kind":5,"range":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"selectionRange":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"children":[{"name":"project","kind":15,"range":{"start":{"line":1,"character":2},"end":{"line":1,"character":19}},"selectionRange":{"start":{"line":1,"character":2},"end":{"line":1,"character":19}}},{"name":"name","kind":15,"range":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}},"selectionRange":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}}},{"name":"machine_type","kind":15,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}},"selectionRange":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}}},{"name":"zone","kind":15,"range":{"start":{"line":4,"character":2},"end":{"line":4,"character":19}},"selectionRange":{"start":{"line":4,"character":2},"end":{"line":4,"character":19}}},{"name":"boot_disk","kind":5,"range":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"selectionRange":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"children":[{"name":"initialize_params","kind":5,"range":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"selectionRange":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"children":[{"name":"image","kind":15,"range":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}},"selectionRange":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}}}]}]},{"name":"network_interface","kind":5,"range":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"selectionRange":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"children":[{"name":"network","kind":15,"range":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}},"selectionRange":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}}},{"name":"access_config","kind":5,"range":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}},"selectionRange":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}}}]}]}]
+2024/10/07 13:39:25 opts.go:215: Completed 1 requests [13.679741ms elapsed]
+2024/10/07 13:39:26 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:26 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:26 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 38): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:26 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 38): []
+2024/10/07 13:39:26 opts.go:215: Completed 1 requests [14.206379ms elapsed]
+2024/10/07 13:39:27 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:27 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:27 rpc_logger.go:32: Incoming request for "textDocument/hover" (ID 39): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"},"position":{"line":13,"character":13}}
+2024/10/07 13:39:27 hover.go:35: Looking for hover data at "instance.tf" -> hcl.Pos{Line:14, Column:14, Byte:271}
+2024/10/07 13:39:27 hover.go:37: received hover data: (*lang.HoverData)(nil)
+2024/10/07 13:39:27 rpc_logger.go:48: Error for "textDocument/hover" (ID 39): [-32098] instance.tf (14,14): position outside of any attribute name, value or block
+2024/10/07 13:39:27 opts.go:215: Completed 1 requests [9.08752ms elapsed]
+[Error - 1:39:27 PM] Request textDocument/hover failed.
+  Message: instance.tf (14,14): position outside of any attribute name, value or block
+  Code: -32098 
+2024/10/07 13:39:28 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:28 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:28 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 40): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:28 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 40): []
+2024/10/07 13:39:28 opts.go:215: Completed 1 requests [6.266262ms elapsed]
+2024/10/07 13:39:28 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:28 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:28 rpc_logger.go:32: Incoming request for "textDocument/hover" (ID 41): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"},"position":{"line":8,"character":29}}
+2024/10/07 13:39:28 hover.go:35: Looking for hover data at "instance.tf" -> hcl.Pos{Line:9, Column:30, Byte:215}
+2024/10/07 13:39:28 hover.go:37: received hover data: &lang.HoverData{Content:lang.MarkupContent{Value:"_string_", Kind:0x2}, Range:hcl.Range{Filename:"instance.tf", Start:hcl.Pos{Line:9, Column:15, Byte:200}, End:hcl.Pos{Line:9, Column:39, Byte:224}}}
+2024/10/07 13:39:28 rpc_logger.go:53: Response to "textDocument/hover" (ID 41): {"contents":{"kind":"markdown","value":"_string_"},"range":{"start":{"line":8,"character":14},"end":{"line":8,"character":38}}}
+2024/10/07 13:39:28 opts.go:215: Completed 1 requests [6.485032ms elapsed]
+2024/10/07 13:39:29 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:29 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:29 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 42): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:29 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 42): []
+2024/10/07 13:39:29 opts.go:215: Completed 1 requests [6.505663ms elapsed]
+2024/10/07 13:39:29 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:29 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:29 rpc_logger.go:32: Incoming request for "textDocument/hover" (ID 43): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"},"position":{"line":3,"character":23}}
+2024/10/07 13:39:29 hover.go:35: Looking for hover data at "instance.tf" -> hcl.Pos{Line:4, Column:24, Byte:121}
+2024/10/07 13:39:29 hover.go:37: received hover data: &lang.HoverData{Content:lang.MarkupContent{Value:"_string_", Kind:0x2}, Range:hcl.Range{Filename:"instance.tf", Start:hcl.Pos{Line:4, Column:18, Byte:115}, End:hcl.Pos{Line:4, Column:29, Byte:126}}}
+2024/10/07 13:39:29 rpc_logger.go:53: Response to "textDocument/hover" (ID 43): {"contents":{"kind":"markdown","value":"_string_"},"range":{"start":{"line":3,"character":17},"end":{"line":3,"character":28}}}
+2024/10/07 13:39:29 opts.go:215: Completed 1 requests [6.440337ms elapsed]
+2024/10/07 13:39:30 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:39:30 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:39:30 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 44): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:39:30 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 44): []
+2024/10/07 13:39:30 opts.go:215: Completed 1 requests [14.06266ms elapsed]
+2024/10/07 13:40:10 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:40:10 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:40:10 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 45): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:40:10 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 45): []
+2024/10/07 13:40:10 opts.go:215: Completed 1 requests [7.267837ms elapsed]
+2024/10/07 13:40:11 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:40:11 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:40:11 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 46): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:40:11 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 46): []
+2024/10/07 13:40:11 opts.go:215: Completed 1 requests [9.127004ms elapsed]
+2024/10/07 13:40:40 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:40:40 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:40:40 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 47): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:40:40 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 47): []
+2024/10/07 13:40:40 opts.go:215: Completed 1 requests [6.123299ms elapsed]
+2024/10/07 13:40:47 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:40:47 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:40:47 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 48): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:40:47 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 48): []
+2024/10/07 13:40:47 opts.go:215: Completed 1 requests [6.341227ms elapsed]
+2024/10/07 13:40:49 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:40:49 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:40:49 rpc_logger.go:32: Incoming notification for "textDocument/didSave": {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:40:49 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:40:49 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:40:49 rpc_logger.go:32: Incoming notification for "workspace/didChangeWatchedFiles": {"changes":[{"uri":"file:///home/serignekane01/instance.tf","type":2}]}
+2024/10/07 13:40:49 did_change_watched_files.go:159: document is open - ignoring event for "file:///home/serignekane01/instance.tf"
+2024/10/07 13:42:57 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:42:57 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:42:57 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 49): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:42:57 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 49): []
+2024/10/07 13:42:57 opts.go:215: Completed 1 requests [8.274064ms elapsed]
+2024/10/07 13:43:01 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:01 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:01 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 50): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:43:01 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 50): []
+2024/10/07 13:43:01 opts.go:215: Completed 1 requests [6.420148ms elapsed]
+2024/10/07 13:43:15 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:15 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:15 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 51): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:43:15 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 51): []
+2024/10/07 13:43:15 opts.go:215: Completed 1 requests [6.316406ms elapsed]
+2024/10/07 13:43:33 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:33 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:33 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 52): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:43:33 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 52): []
+2024/10/07 13:43:33 opts.go:215: Completed 1 requests [9.053554ms elapsed]
+2024/10/07 13:43:33 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:33 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:33 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 53): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:43:33 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 53): []
+2024/10/07 13:43:33 opts.go:215: Completed 1 requests [6.421069ms elapsed]
+2024/10/07 13:43:35 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:35 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:35 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 54): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:43:35 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 54): []
+2024/10/07 13:43:35 opts.go:215: Completed 1 requests [10.872735ms elapsed]
+2024/10/07 13:43:37 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:37 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:37 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 55): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:43:37 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 55): []
+2024/10/07 13:43:37 opts.go:215: Completed 1 requests [7.580212ms elapsed]
+2024/10/07 13:43:38 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:38 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:38 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 56): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:43:38 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 56): []
+2024/10/07 13:43:38 opts.go:215: Completed 1 requests [6.516772ms elapsed]
+2024/10/07 13:43:39 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:39 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:39 rpc_logger.go:32: Incoming request for "textDocument/hover" (ID 57): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"},"position":{"line":2,"character":19}}
+2024/10/07 13:43:39 hover.go:35: Looking for hover data at "instance.tf" -> hcl.Pos{Line:3, Column:20, Byte:88}
+2024/10/07 13:43:39 hover.go:37: received hover data: &lang.HoverData{Content:lang.MarkupContent{Value:"_string_", Kind:0x2}, Range:hcl.Range{Filename:"instance.tf", Start:hcl.Pos{Line:3, Column:18, Byte:86}, End:hcl.Pos{Line:3, Column:29, Byte:97}}}
+2024/10/07 13:43:39 rpc_logger.go:53: Response to "textDocument/hover" (ID 57): {"contents":{"kind":"markdown","value":"_string_"},"range":{"start":{"line":2,"character":17},"end":{"line":2,"character":28}}}
+2024/10/07 13:43:39 opts.go:215: Completed 1 requests [7.482453ms elapsed]
+2024/10/07 13:43:40 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:40 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:40 rpc_logger.go:32: Incoming request for "textDocument/hover" (ID 58): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"},"position":{"line":1,"character":18}}
+2024/10/07 13:43:40 hover.go:35: Looking for hover data at "instance.tf" -> hcl.Pos{Line:2, Column:19, Byte:67}
+2024/10/07 13:43:40 hover.go:37: received hover data: &lang.HoverData{Content:lang.MarkupContent{Value:"_string_", Kind:0x2}, Range:hcl.Range{Filename:"instance.tf", Start:hcl.Pos{Line:2, Column:18, Byte:66}, End:hcl.Pos{Line:2, Column:20, Byte:68}}}
+2024/10/07 13:43:40 rpc_logger.go:53: Response to "textDocument/hover" (ID 58): {"contents":{"kind":"markdown","value":"_string_"},"range":{"start":{"line":1,"character":17},"end":{"line":1,"character":19}}}
+2024/10/07 13:43:40 opts.go:215: Completed 1 requests [8.794504ms elapsed]
+2024/10/07 13:43:40 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:43:40 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:43:40 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 59): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:43:40 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 59): []
+2024/10/07 13:43:40 opts.go:215: Completed 1 requests [8.005805ms elapsed]
+2024/10/07 13:45:31 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:31 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:31 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 60): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:31 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 60): []
+2024/10/07 13:45:31 opts.go:215: Completed 1 requests [9.579272ms elapsed]
+2024/10/07 13:45:33 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:33 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:33 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 61): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:33 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 61): []
+2024/10/07 13:45:33 opts.go:215: Completed 1 requests [8.882027ms elapsed]
+2024/10/07 13:45:34 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:34 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:34 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 62): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:34 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 62): []
+2024/10/07 13:45:34 opts.go:215: Completed 1 requests [6.791439ms elapsed]
+2024/10/07 13:45:37 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:37 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:37 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 63): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:37 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 63): []
+2024/10/07 13:45:37 opts.go:215: Completed 1 requests [6.444094ms elapsed]
+2024/10/07 13:45:38 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:38 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:38 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 64): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:38 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 64): []
+2024/10/07 13:45:38 opts.go:215: Completed 1 requests [6.575868ms elapsed]
+2024/10/07 13:45:38 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:38 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:38 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 65): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:38 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 65): []
+2024/10/07 13:45:38 opts.go:215: Completed 1 requests [6.431601ms elapsed]
+2024/10/07 13:45:40 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:40 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:40 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 66): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:40 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 66): []
+2024/10/07 13:45:40 opts.go:215: Completed 1 requests [8.200503ms elapsed]
+2024/10/07 13:45:42 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:42 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:42 rpc_logger.go:32: Incoming notification for "textDocument/didChange": {"textDocument":{"uri":"file:///home/serignekane01/instance.tf","version":3},"contentChanges":[{"range":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"rangeLength":313,"text":"resource \"google_compute_instance\" \"terraform\" {\n  project      = \"exo-cloud-storage\"  # Remplacez par votre ID de projet\n  name         = \"terraform\"\n  machine_type = \"e2-medium\"\n  zone         = \"us-central1-a\"      # Remplacez par la zone que vous souhaitez utiliser\n\n  boot_disk {\n    initialize_params {\n      image = \"debian-cloud/debian-11\"\n    }\n  }\n\n  network_interface {\n    network = \"default\"\n    access_config {\n    }\n  }\n}\n"}]}
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "42": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "43": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "44": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: false)
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "45": "OpTypeParseVariables" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "46": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "47": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "42" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "42": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "43" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 module_calls.go:64: indexing declared module calls for "file:///home/serignekane01": 0
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "48": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "49": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "50": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "51": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:140: JOBS: Enqueueing new job "52": "OpTypeReferenceValidation" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "43": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: ["48" "50" "51"])
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "45" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeParseVariables" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "44" (scheduler prio: -1, job prio: -1, isDirOpen: true): "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "44": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "45": "OpTypeParseVariables" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "46" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "46": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "47" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "47": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "48" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "48": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "49" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "49": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "50" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "50": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "51" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "51": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 jobs.go:321: JOBS: Dispatching next job "52" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeReferenceValidation" for {"file:///home/serignekane01"}
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 jobs.go:461: JOBS: Finishing job "52": "OpTypeReferenceValidation" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:45:42 opts.go:215: Posting server call "client.refreshModuleProviders" 
+2024/10/07 13:45:42 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:42 opts.go:215: Received response for callback "10"
+2024/10/07 13:45:42 opts.go:215: Posting server call "client.refreshModuleCalls" 
+2024/10/07 13:45:42 opts.go:215: Received response for callback "11"
+2024/10/07 13:45:42 opts.go:215: Posting server call "client.refreshTerraformVersion" 
+2024/10/07 13:45:42 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:42 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:42 rpc_logger.go:32: Incoming request for "workspace/executeCommand" (ID 67): {"command":"terraform-ls.module.terraform","arguments":["uri=file:///home/serignekane01"]}
+2024/10/07 13:45:42 rpc_logger.go:53: Response to "workspace/executeCommand" (ID 67): {"v":0,"discovered_version":"1.5.7"}
+2024/10/07 13:45:42 opts.go:215: Completed 1 requests [133.539µs elapsed]
+2024/10/07 13:45:42 opts.go:215: Received response for callback "12"
+2024/10/07 13:45:42 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:42 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:42 rpc_logger.go:32: Incoming request for "textDocument/semanticTokens/full" (ID 68): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:42 rpc_logger.go:53: Response to "textDocument/semanticTokens/full" (ID 68): {"data":[0,0,8,10,4096,0,9,25,11,20482,0,26,11,11,4224,1,2,7,9,4096,0,15,19,13,0,1,2,4,9,4096,0,15,11,13,0,1,2,12,9,4096,0,15,11,13,0,1,2,4,9,4096,0,15,15,13,0,2,2,9,10,4096,1,4,17,10,4096,1,6,5,9,4096,0,8,24,13,0,4,2,17,10,4096,1,4,7,9,4096,0,10,9,13,0,1,4,13,10,4096]}
+2024/10/07 13:45:42 opts.go:215: Completed 1 requests [8.190234ms elapsed]
+2024/10/07 13:45:42 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:42 opts.go:215: Received request batch of size 1 (qlen=1)
+2024/10/07 13:45:42 opts.go:215: Dequeued request batch of length 1 (qlen=1)
+2024/10/07 13:45:42 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:42 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 70): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:42 rpc_logger.go:32: Incoming request for "textDocument/documentSymbol" (ID 69): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:42 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 70): [{"name":"resource \"google_compute_instance\" \"terraform\"","kind":5,"range":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"selectionRange":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"children":[{"name":"project","kind":15,"range":{"start":{"line":1,"character":2},"end":{"line":1,"character":36}},"selectionRange":{"start":{"line":1,"character":2},"end":{"line":1,"character":36}}},{"name":"name","kind":15,"range":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}},"selectionRange":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}}},{"name":"machine_type","kind":15,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}},"selectionRange":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}}},{"name":"zone","kind":15,"range":{"start":{"line":4,"character":2},"end":{"line":4,"character":32}},"selectionRange":{"start":{"line":4,"character":2},"end":{"line":4,"character":32}}},{"name":"boot_disk","kind":5,"range":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"selectionRange":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"children":[{"name":"initialize_params","kind":5,"range":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"selectionRange":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"children":[{"name":"image","kind":15,"range":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}},"selectionRange":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}}}]}]},{"name":"network_interface","kind":5,"range":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"selectionRange":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"children":[{"name":"network","kind":15,"range":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}},"selectionRange":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}}},{"name":"access_config","kind":5,"range":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}},"selectionRange":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}}}]}]}]
+2024/10/07 13:45:42 opts.go:215: Completed 1 requests [6.856115ms elapsed]
+2024/10/07 13:45:42 rpc_logger.go:53: Response to "textDocument/documentSymbol" (ID 69): [{"name":"resource \"google_compute_instance\" \"terraform\"","kind":5,"range":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"selectionRange":{"start":{"line":0,"character":0},"end":{"line":17,"character":1}},"children":[{"name":"project","kind":15,"range":{"start":{"line":1,"character":2},"end":{"line":1,"character":36}},"selectionRange":{"start":{"line":1,"character":2},"end":{"line":1,"character":36}}},{"name":"name","kind":15,"range":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}},"selectionRange":{"start":{"line":2,"character":2},"end":{"line":2,"character":28}}},{"name":"machine_type","kind":15,"range":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}},"selectionRange":{"start":{"line":3,"character":2},"end":{"line":3,"character":28}}},{"name":"zone","kind":15,"range":{"start":{"line":4,"character":2},"end":{"line":4,"character":32}},"selectionRange":{"start":{"line":4,"character":2},"end":{"line":4,"character":32}}},{"name":"boot_disk","kind":5,"range":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"selectionRange":{"start":{"line":6,"character":2},"end":{"line":10,"character":3}},"children":[{"name":"initialize_params","kind":5,"range":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"selectionRange":{"start":{"line":7,"character":4},"end":{"line":9,"character":5}},"children":[{"name":"image","kind":15,"range":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}},"selectionRange":{"start":{"line":8,"character":6},"end":{"line":8,"character":38}}}]}]},{"name":"network_interface","kind":5,"range":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"selectionRange":{"start":{"line":12,"character":2},"end":{"line":16,"character":3}},"children":[{"name":"network","kind":15,"range":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}},"selectionRange":{"start":{"line":13,"character":4},"end":{"line":13,"character":23}}},{"name":"access_config","kind":5,"range":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}},"selectionRange":{"start":{"line":14,"character":4},"end":{"line":15,"character":5}}}]}]}]
+2024/10/07 13:45:42 opts.go:215: Completed 1 requests [10.039366ms elapsed]
+2024/10/07 13:45:42 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:42 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:42 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 71): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:42 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 71): []
+2024/10/07 13:45:42 opts.go:215: Completed 1 requests [13.406847ms elapsed]
+2024/10/07 13:45:43 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:43 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:43 rpc_logger.go:32: Incoming request for "textDocument/documentLink" (ID 72): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:43 rpc_logger.go:53: Response to "textDocument/documentLink" (ID 72): []
+2024/10/07 13:45:43 opts.go:215: Completed 1 requests [7.519341ms elapsed]
+2024/10/07 13:45:43 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:43 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:43 rpc_logger.go:32: Incoming notification for "textDocument/didSave": {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:43 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:43 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:43 rpc_logger.go:32: Incoming notification for "workspace/didChangeWatchedFiles": {"changes":[{"uri":"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed/Nm4S.tf","type":1},{"uri":"file:///home/serignekane01/instance.tf","type":2}]}
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "53": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "54": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "55": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: false)
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "56": "OpTypeParseVariables" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "57": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "58": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 did_change_watched_files.go:159: document is open - ignoring event for "file:///home/serignekane01/instance.tf"
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "53" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "53": "OpTypeParseModuleConfiguration" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "54" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 document_change.go:112: loading module metadata returned error: /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 document_change.go:117: decoding declared module calls for "file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed" failed: /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "59": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "60": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "61": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "62": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:140: JOBS: Enqueueing new job "63": "OpTypeReferenceValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (IsDirOpen: false, IgnoreState: true)
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "54": "OpTypeLoadModuleMetadata" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: ["59" "61" "62"])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "55" (scheduler prio: -1, job prio: -1, isDirOpen: false): "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "55": "OpTypeGetModuleDataFromRegistry" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "56" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeParseVariables" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "56": "OpTypeParseVariables" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "57" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "57": "OpTypeSchemaVarsValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "58" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "58": "OpTypeDecodeVarsReferences" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "59" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "59": "OpTypePreloadEmbeddedSchema" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "60" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "60": "OpTypeSchemaModuleValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "61" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "61": "OpTypeDecodeReferenceTargets" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "62" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "62": "OpTypeDecodeReferenceOrigins" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:43 jobs.go:321: JOBS: Dispatching next job "63" (scheduler prio: -1, job prio: 0, isDirOpen: false): "OpTypeReferenceValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"}
+2024/10/07 13:45:43 jobs.go:461: JOBS: Finishing job "63": "OpTypeReferenceValidation" for {"file:///home/serignekane01/.codeoss/data/User/History/1c5da3ed"} (err = /home/serignekane01/.codeoss/data/User/History/1c5da3ed: module not found, deferredJobs: [])
+2024/10/07 13:45:43 jobs.go:299: retrying on obj is nil
+2024/10/07 13:45:45 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:45 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:45 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 73): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:45 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 73): []
+2024/10/07 13:45:45 opts.go:215: Completed 1 requests [6.113374ms elapsed]
+2024/10/07 13:45:47 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:45:47 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:45:47 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 74): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:45:47 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 74): []
+2024/10/07 13:45:47 opts.go:215: Completed 1 requests [6.092917ms elapsed]
+2024/10/07 13:46:17 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:46:17 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:46:17 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 75): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:46:17 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 75): []
+2024/10/07 13:46:17 opts.go:215: Completed 1 requests [6.25293ms elapsed]
+2024/10/07 13:46:40 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:46:40 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:46:40 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 76): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:46:40 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 76): []
+2024/10/07 13:46:40 opts.go:215: Completed 1 requests [7.562817ms elapsed]
+2024/10/07 13:46:42 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:46:42 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:46:42 rpc_logger.go:32: Incoming request for "textDocument/codeLens" (ID 77): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:46:42 rpc_logger.go:53: Response to "textDocument/codeLens" (ID 77): []
+2024/10/07 13:46:42 opts.go:215: Completed 1 requests [11.756363ms elapsed]
+2024/10/07 13:46:43 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:46:43 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:46:43 rpc_logger.go:32: Incoming notification for "textDocument/didSave": {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:46:43 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:46:43 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:46:43 rpc_logger.go:32: Incoming notification for "workspace/didChangeWatchedFiles": {"changes":[{"uri":"file:///home/serignekane01/instance.tf","type":2}]}
+2024/10/07 13:46:43 did_change_watched_files.go:159: document is open - ignoring event for "file:///home/serignekane01/instance.tf"
+2024/10/07 13:49:43 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:49:43 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:49:43 rpc_logger.go:32: Incoming notification for "workspace/didChangeWatchedFiles": {"changes":[{"uri":"file:///home/serignekane01/.terraform","type":1}]}
+2024/10/07 13:49:44 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:49:44 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:49:44 rpc_logger.go:32: Incoming notification for "workspace/didChangeWatchedFiles": {"changes":[{"uri":"file:///home/serignekane01/.terraform.lock.hcl","type":1}]}
+2024/10/07 13:49:44 jobs.go:140: JOBS: Enqueueing new job "64": "OpTypeParseProviderVersions" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:49:44 jobs.go:299: retrying on obj is nil
+2024/10/07 13:49:44 jobs.go:140: JOBS: Enqueueing new job "65": "OpTypeObtainSchema" for {"file:///home/serignekane01"} (IsDirOpen: true, IgnoreState: true)
+2024/10/07 13:49:44 jobs.go:299: retrying on obj is nil
+2024/10/07 13:49:44 jobs.go:321: JOBS: Dispatching next job "64" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeParseProviderVersions" for {"file:///home/serignekane01"}
+2024/10/07 13:49:44 jobs.go:299: retrying on obj is nil
+2024/10/07 13:49:44 jobs.go:461: JOBS: Finishing job "64": "OpTypeParseProviderVersions" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:49:44 jobs.go:299: retrying on obj is nil
+2024/10/07 13:49:44 jobs.go:321: JOBS: Dispatching next job "65" (scheduler prio: 1, job prio: 0, isDirOpen: true): "OpTypeObtainSchema" for {"file:///home/serignekane01"}
+2024/10/07 13:49:44 jobs.go:299: retrying on obj is nil
+2024/10/07 13:49:45 opts.go:215: Posting server notification "telemetry/event" {"v":1,"name":"moduleData","properties":{"installedProviders":{"registry.terraform.io/hashicorp/google":"6.5.0"},"moduleId":"0dd263eb-4a1e-2587-740c-da325b1c92ca","providerRequirements":{"registry.terraform.io/-/google":""},"tfVersion":"1.5.7"}}
+2024/10/07 13:49:45 opts.go:215: Posting server call "client.refreshModuleProviders" 
+2024/10/07 13:49:45 opts.go:215: Received response for callback "13"
+2024/10/07 13:49:45 opts.go:215: Posting server call "client.refreshModuleCalls" 
+2024/10/07 13:49:45 opts.go:215: Received response for callback "14"
+2024/10/07 13:49:45 opts.go:215: Posting server call "client.refreshTerraformVersion" 
+2024/10/07 13:49:45 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:49:45 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:49:46 provider_schema.go:109: PSS: adding local schema (/home/serignekane01, registry.terraform.io/hashicorp/google): 0xc000e40100
+2024/10/07 13:49:46 jobs.go:461: JOBS: Finishing job "65": "OpTypeObtainSchema" for {"file:///home/serignekane01"} (err = %!s(<nil>), deferredJobs: [])
+2024/10/07 13:49:46 jobs.go:299: retrying on obj is nil
+2024/10/07 13:49:46 rpc_logger.go:32: Incoming request for "workspace/executeCommand" (ID 78): {"command":"terraform-ls.module.terraform","arguments":["uri=file:///home/serignekane01"]}
+2024/10/07 13:49:46 rpc_logger.go:53: Response to "workspace/executeCommand" (ID 78): {"v":0,"discovered_version":"1.5.7"}
+2024/10/07 13:49:46 opts.go:215: Completed 1 requests [242.053654ms elapsed]
+2024/10/07 13:49:46 opts.go:215: Received response for callback "15"
+2024/10/07 13:49:46 opts.go:215: Posting server call "workspace/semanticTokens/refresh" 
+2024/10/07 13:49:46 opts.go:215: Received response for callback "16"
+2024/10/07 13:49:46 opts.go:215: Received request batch of size 1 (qlen=0)
+2024/10/07 13:49:46 opts.go:215: Dequeued request batch of length 1 (qlen=0)
+2024/10/07 13:49:46 rpc_logger.go:32: Incoming request for "textDocument/semanticTokens/full" (ID 79): {"textDocument":{"uri":"file:///home/serignekane01/instance.tf"}}
+2024/10/07 13:49:46 rpc_logger.go:53: Response to "textDocument/semanticTokens/full" (ID 79): {"data":[0,0,8,10,4096,0,9,25,11,20482,0,26,11,11,4224,1,2,7,9,4096,0,15,19,13,0,1,2,4,9,4096,0,15,11,13,0,1,2,12,9,4096,0,15,11,13,0,1,2,4,9,4096,0,15,15,13,0,2,2,9,10,4096,1,4,17,10,4096,1,6,5,9,4096,0,8,24,13,0,4,2,17,10,4096,1,4,7,9,4096,0,10,9,13,0,1,4,13,10,4096]}
+2024/10/07 13:49:46 opts.go:215: Completed 1 requests [9.110784ms elapsed]

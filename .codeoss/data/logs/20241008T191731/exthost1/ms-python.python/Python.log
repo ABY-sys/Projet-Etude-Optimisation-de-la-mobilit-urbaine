@@ -1,0 +1,41 @@
+2024-10-08 19:18:12.477 [info] Default formatter is set to null for workspace /home/serignekane01
+2024-10-08 19:18:12.477 [info] Test server listening.
+2024-10-08 19:18:12.477 [info] > conda info --json
+2024-10-08 19:18:12.477 [info] > hatch env show --json
+2024-10-08 19:18:12.477 [info] cwd: .
+2024-10-08 19:18:12.477 [info] > pyenv which python
+2024-10-08 19:18:12.477 [info] cwd: .
+2024-10-08 19:18:12.479 [info] Found: /bin/python --> /usr/bin/python3.12
+2024-10-08 19:18:12.481 [info] Found: /bin/python2 --> /usr/local/bin/python2.7
+2024-10-08 19:18:12.482 [info] Found: /bin/python3 --> /bin/python3.12
+2024-10-08 19:18:12.483 [info] Found: /bin/python3.12 --> /bin/python3.12
+2024-10-08 19:18:12.524 [info] Found: /usr/bin/python --> /usr/bin/python3.12
+2024-10-08 19:18:12.529 [info] Found: /usr/bin/python2 --> /usr/local/bin/python2.7
+2024-10-08 19:18:12.531 [info] Found: /usr/bin/python3 --> /usr/bin/python3.12
+2024-10-08 19:18:12.531 [info] Found: /usr/bin/python3.12 --> /usr/bin/python3.12
+2024-10-08 19:18:12.607 [info] Found: /usr/local/bin/python2.7 --> /usr/local/bin/python2.7
+2024-10-08 19:18:12.650 [info] > /bin/python -I /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/get_output_via_markers.py /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/interpreterInfo.py
+2024-10-08 19:18:12.682 [info] > /bin/python2 -I /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/get_output_via_markers.py /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/interpreterInfo.py
+2024-10-08 19:18:12.715 [info] > /bin/python3 -I /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/get_output_via_markers.py /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/interpreterInfo.py
+2024-10-08 19:18:12.724 [warning] Error: Command failed: /bin/python2 -I /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/get_output_via_markers.py /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/interpreterInfo.py
+Unknown option: -I
+usage: /bin/python2 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+
+    at ChildProcess.exithandler (node:child_process:422:12)
+    at ChildProcess.emit (node:events:529:35)
+    at maybeClose (node:internal/child_process:1098:16)
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:303:5) {
+  code: 2,
+  killed: false,
+  signal: null,
+  cmd: '/bin/python2 -I /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/get_output_via_markers.py /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/interpreterInfo.py'
+}
+2024-10-08 19:18:12.724 [error] Support for Python 2.7 has been dropped by the Python extension so certain features may not work, upgrade to using Python 3.
+2024-10-08 19:18:12.748 [info] > /bin/python2 /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/get_output_via_markers.py /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/interpreterInfo.py
+2024-10-08 19:18:12.842 [info] Python interpreter path: /bin/python
+2024-10-08 19:18:14.905 [info] Starting Jedi language server for serignekane01.
+2024-10-08 19:37:49.850 [info] Discover tests for workspace name: serignekane01 - uri: /home/serignekane01/dataflow-python-examples/dataflow_python_examples/data_ingestion.py
+2024-10-08 19:37:55.586 [info] Discover tests for workspace name: serignekane01 - uri: /home/serignekane01/dataflow-python-examples/dataflow_python_examples/data_ingestion.py
+2024-10-08 19:37:56.065 [info] Discover tests for workspace name: serignekane01 - uri: /home/serignekane01/dataflow-python-examples/dataflow_python_examples/data_ingestion.py
+2024-10-08 19:38:05.508 [info] Discover tests for workspace name: serignekane01 - uri: /home/serignekane01/dataflow-python-examples/dataflow_python_examples/data_ingestion.py

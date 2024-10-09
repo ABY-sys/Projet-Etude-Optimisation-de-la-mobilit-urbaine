@@ -1,0 +1,17 @@
+2024-10-07 13:33:11.813 [info] 
+
+
+
+
+2024-10-07 13:33:11.813 [info] Extension host agent started.
+2024-10-07 13:33:11.815 [info] Started initializing default profile extensions in extensions installation folder. file:///home/serignekane01/.codeoss/extensions
+2024-10-07 13:33:11.832 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/serignekane01/.codeoss/extensions
+2024-10-07 13:33:25.091 [info] [127.0.0.1][ee362629][ManagementConnection] New connection established.
+2024-10-07 13:33:25.092 [info] [127.0.0.1][16af2fee][ExtensionHostConnection] New connection established.
+2024-10-07 13:33:26.000 [info] [127.0.0.1][16af2fee][ExtensionHostConnection] <1957> Launched Extension Host Process.
+2024-10-07 14:16:38.677 [info] [127.0.0.1][ee362629][ManagementConnection] The client has reconnected.
+2024-10-07 14:16:38.790 [info] [127.0.0.1][16af2fee][ExtensionHostConnection] The client has reconnected.
+2024-10-07 14:57:50.481 [info] [127.0.0.1][16af2fee][ExtensionHostConnection] The client has reconnected.
+2024-10-07 14:57:50.553 [info] [127.0.0.1][ee362629][ManagementConnection] The client has reconnected.
+2024-10-07 14:58:42.482 [info] [127.0.0.1][ee362629][ManagementConnection] The client has reconnected.
+2024-10-07 14:58:42.593 [info] [127.0.0.1][16af2fee][ExtensionHostConnection] The client has reconnected.

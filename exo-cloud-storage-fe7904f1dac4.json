@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "exo-cloud-storage",
+  "private_key_id": "fe7904f1dac4b97e5f98975021c485769ad41b1b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwrUqudLkbSB/x\nx0IRmGU1T2i9PWgr4egfl3PETtn9b/a7HOsHsLHwoBFJAymxfApIXWm1UT7vfcfv\n/Kr/015wnfKFW13mPXCd3oJCU4DuhLyb8DtPFHGzu/4OzVIJBGfPVD4dYW1UQuGz\n12LTqTxyCsTLW4YwVEEbzhnIQHWOPQ72CLAw/ZoFXirJSI1bieqvkoLphyRHGlXr\nKIR2h7QEemS7AltRGi9REGEGvpIhcHu4GJERqtFXa2x9/l+7koIyv5CWXqo1VGe6\nW6x+gWXll+1qVpBMh4K9jTvlyzW+KS5SJXdiDh4GbgFb+1PGAjbDeBkzO5sdjCyG\nzIiaO/DvAgMBAAECggEAB77BDF7PkpOZ2uaKTe0pWqnthIZBn9LaczAXgh6WzdZv\nsYo1/3NOiabquxGpbT9rz/pQXQN/x83yyuF/uZFRjYxPCmuT9TjyS+lqOnAgsdQd\n1JQ2dWQHDAMMwydbFkwcJOmjg3Q277+y10h066R6ouE3+VY8zreS1x404SN6Q870\npF/qrWRUvytFvRBjBokPB6CL2zarZ7hKDE9IkMyxL4ZY/MufVjZ0uUFCUMXJn6Jw\nBGOsSINE79ugL9kp53D96gn3d9FUX/Mz68omQsUwniaQsTWUH58DIvsAnX9bOp2A\n/09OX8v8tyagLf15YLt6zh4qSRKi/1SPc/1Lh/7tiQKBgQDwetuZC390c1Cm0AJ3\nYKZRhyhyY6U3QsMjdUUplkb69tBvtJkTmsmqLtJKlZr8Vska94bswwhtxAJtHQR0\nIeUJTDB6HLkERVqDeAtf20MepAx4p1rYfl9I2w15+14YPrQHT7ou05SWUkdkGBJa\np5QT/YHoWDnuygMUE7PZLRA5ZQKBgQC8FExzbqXJTUL8roDMYsdNLcxk1pCyFWMR\nncceoh+TsugyOk4uJ1GYUTPg+dFOM8r2SV+X/nqybD4iRBMowwgmYt8l/64Bx7z0\nehZgVk4awxZ5gRw2Omh+I+Pb49W/2b7Ju42d/9+wPAGbKTWSLwQ7C7vhQ1sg9+Kq\ncchEB0hFwwKBgQDd6MFTzSRkFTVLeY+NEYbonMxaIlGHWPgxdDnKUn5VgAR/0Cuh\nx6hofqRXZw6J5JvXYqsDOEZC5ClI/wnpEI4FsmTZij/BDS6lOtVkMzUQxVkszWIr\nfRH4bQtWkPsXbGU8ifnI1D29KVfvqbbmKNWgTMLf4Oo0y/1jPXss4USjcQKBgBRB\nU2JzHiOp0HcKDBD26mPjdMm/WeHz77Fr/o/MAf6UG/Gc2eKalW0EAcRO4z260jbn\n/AWQgIJKqf5iunV/W5dWupWLDaBfdHgX1eUWJl83d2oqf3FPpQVAtD9wMArzVlq/\neibz8ZE3RS0CqSRPL/Nz9g3yhRPt3llg26KH7j6lAoGAL4p+aj6MkDYAASmEmjTE\nEweJxfRk7v3hg1NWFiqiBnwfqnZrlpBG0TpfFlAiCtTPmouF+DNZhcduL+JzWlLp\naIoXiPs+w+QvtMMfN4MMlQHMip9HznRaxjHZljZ9mAVFhlXbgJb0Il7wcdedRVpn\nd8XuoPRLIuTsGeXjE/InSYs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "user-dataflow@exo-cloud-storage.iam.gserviceaccount.com",
+  "client_id": "108244050396886204932",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/user-dataflow%40exo-cloud-storage.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
