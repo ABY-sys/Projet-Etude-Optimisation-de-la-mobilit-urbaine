@@ -11,8 +11,8 @@ html, body {
 }
 
 .content {
-  flex: 1; /* Prend tout l'espace disponible entre le header et le footer */
-  padding: 110px;
+  flex: 1; 
+  padding: 110px; 
 }
 
 .navbar {
@@ -25,14 +25,68 @@ html, body {
 }
 
 .map-container {
-  height: 500px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 110px); 
+  width: 100%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .form-label {
   font-weight: bold;
+}
+
+.transport-icons {
+  display: flex;
+  justify-content: space-between; /* Espace entre les boutons */
+}
+
+.transport-button {
+  display: flex;
+  flex-direction: column; /* Aligne l'icône et le texte verticalement */
+  align-items: center; /* Centre le contenu */
+  background-color: transparent; /* Fond transparent par défaut */
+  border: 2px solid transparent; /* Bordure transparente par défaut */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 10px; /* Espacement interne */
+  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+  transition: background-color 0.3s, border-color 0.3s; /* Transition pour l'effet hover */
+}
+
+.transport-button:hover {
+  background-color: white; /* Fond blanc au survol */
+  border-color: #ffffff; /* Bordure grise au survol */
+}
+
+.transport-button img {
+  width: 40px; /* Ajustez la taille de l'icône selon vos besoins */
+  height: auto; /* Conserve le ratio d'aspect */
+}
+
+.transport-button p {
+  margin-top: 5px; /* Espacement entre l'icône et le texte */
+  color: black; /* Couleur du texte */
+}
+
+.autocomplete-list {
+  list-style-type: none; /* Supprime les puces */
+  padding: 0; /* Supprime le padding */
+  margin: 0; /* Supprime la marge */
+  border: 1px solid #ccc; /* Bordure autour de la liste */
+  background-color: white; /* Fond blanc */
+  max-height: 200px; /* Hauteur maximale */
+  overflow-y: auto; /* Ajoute un défilement si nécessaire */
+  position: absolute; /* Positionnement absolu pour superposer la liste */
+  z-index: 1000; /* Assure que la liste est au-dessus des autres éléments */
+}
+
+.autocomplete-list li {
+  padding: 10px; /* Espacement interne */
+  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+  display: flex; /* Utilise flexbox pour aligner les éléments */
+  align-items: center; /* Centre verticalement */
+}
+
+.autocomplete-list li:hover {
+  background-color: #f0f0f0; /* Change le fond au survol */
 }
 
 .btn-danger {
