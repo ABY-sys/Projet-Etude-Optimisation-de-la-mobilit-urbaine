@@ -1,101 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, DirectionsRenderer } from '@react-google-maps/api';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import AddressInput from '../Components/AddressInput';
+import TransportIcons from '../Components/TransportIcons';
+import ItineraryDetails from '../Components/ItineraryDetails';
 import '../index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Itineraires = () => {
   const [depart, setDepart] = useState('');
   const [arrivee, setArrivee] = useState('');
-  const [transport, setTransport] = useState('velo');
-  const [directions, setDirections] = useState(null); // État pour stocker les directions
-  const [durations, setDurations] = useState({}); // État pour stocker les durées
+  const [transport, setTransport] = useState('TRANSIT'); // Transport par défaut changé ici
+  const [directions, setDirections] = useState(null);
+  const [durations, setDurations] = useState({});
   const [autocompleteDepart, setAutocompleteDepart] = useState([]);
   const [autocompleteArrivee, setAutocompleteArrivee] = useState([]);
-  const [itineraireDetails, setItineraireDetails] = useState({}); // État pour stocker les détails de l'itinéraire par mode de transport
+  const [itineraireDetails, setItineraireDetails] = useState({});
+  const [googleLoaded, setGoogleLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const center = { lat: 48.8566, lng: 2.3522 };
+  const libraries = ["places"];
 
-  const center = { lat: 48.8566, lng: 2.3522 }; // Paris
-
-  // Fonction pour calculer les durées
-  const handleSearch = () => {
-    const directionsService = new window.google.maps.DirectionsService();
-    const travelModes = {
-      velo: window.google.maps.TravelMode.BICYCLING,
-      pied: window.google.maps.TravelMode.WALKING,
-      voiture: window.google.maps.TravelMode.DRIVING,
-      transport_commun: window.google.maps.TravelMode.TRANSIT,
+  useEffect(() => {
+    const checkGoogleMaps = () => {
+      if (typeof window.google !== 'undefined' && window.google.maps) {
+        setGoogleLoaded(true);
+      } else {
+        setTimeout(checkGoogleMaps, 100);
+      }
     };
+    checkGoogleMaps();
+  }, []);
 
-    // Calculer les directions pour chaque moyen de transport
-    Object.keys(travelModes).forEach((mode) => {
-      directionsService.route(
+  const handleAddressChange = (input, setAutocomplete) => {
+    if (googleLoaded && input.length > 2) {
+      const autocompleteService = new window.google.maps.places.AutocompleteService();
+      autocompleteService.getPlacePredictions(
         {
-          origin: depart,
-          destination: arrivee,
-          travelMode: travelModes[mode],
+          input,
+          componentRestrictions: { country: 'fr' },
         },
-        (result, status) => {
-          if (status === window.google.maps.DirectionsStatus.OK) {
-            console.log(`Directions for ${mode}:`, result); // Ajoutez cette ligne
-            setDurations((prev) => ({ ...prev, [mode]: result.routes[0].legs[0].duration.text }));
-            // Extraire les détails de l'itinéraire
-            const steps = result.routes[0].legs[0].steps.map((step) => ({
-              instruction: step.html_instructions,
-              transit: step.travel_mode === "TRANSIT" ? step.transit.line.short_name : null,
-              waitTime: step.transit ? step.transit.num_stops : null, // Nombre d'arrêts pour le transit
-              arrivalTime: step.transit ? new Date(Date.now() + step.duration.value * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : null, // Heure d'arrivée estimée
-            }));
-            setItineraireDetails((prev) => ({ ...prev, [mode]: steps })); // Met à jour les détails de l'itinéraire pour le mode sélectionné
+        (predictions, status) => {
+          if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+            setAutocomplete(predictions);
           } else {
-            console.error(`Error fetching directions: ${result}`);
-            alert('Impossible de trouver l\'itinéraire. Veuillez vérifier les adresses.');
+            setAutocomplete([]);
           }
         }
       );
-    });
+    } else {
+      setAutocomplete([]);
+    }
   };
 
-  // Fonction pour tracer l'itinéraire en fonction du moyen de transport sélectionné
-  const handleTransportClick = (mode) => {
-    const directionsService = new window.google.maps.DirectionsService();
-    directionsService.route(
-      {
-        origin: depart,
-        destination: arrivee,
-        travelMode: mode,
-      },
-      (result, status) => {
-        if (status === window.google.maps.DirectionsStatus.OK) {
-          setDirections(result);
-          setTransport(mode); // Met à jour le mode de transport sélectionné
-          // Extraire les détails de l'itinéraire
-          const steps = result.routes[0].legs[0].steps.map((step) => ({
-            instruction: step.html_instructions,
-            transit: step.travel_mode === "TRANSIT" ? step.transit.line.short_name : null,
-            waitTime: step.transit ? step.transit.num_stops : null, // Nombre d'arrêts pour le transit
-            arrivalTime: step.transit ? new Date(Date.now() + step.duration.value * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : null, // Heure d'arrivée estimée
-          }));
-          setItineraireDetails((prev) => ({ ...prev, [mode]: steps })); // Met à jour les détails de l'itinéraire pour le mode sélectionné
-        } else {
-          console.error(`Error fetching directions: ${result}`);
-          alert('Impossible de trouver l\'itinéraire. Veuillez vérifier les adresses.');
-        }
-      }
-    );
-  };
-
-  // Fonction pour gérer l'auto-complétion
-  const handleAddressChange = (input, setAutocomplete) => {
-    const service = new window.google.maps.places.AutocompleteService();
-    service.getPlacePredictions({ input }, (predictions, status) => {
-      if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-        setAutocomplete(predictions);
-      }
-    });
-  };
-
-  // Fonction pour gérer le changement d'adresse
   const handleDepartChange = (e) => {
     setDepart(e.target.value);
     handleAddressChange(e.target.value, setAutocompleteDepart);
@@ -106,10 +65,142 @@ const Itineraires = () => {
     handleAddressChange(e.target.value, setAutocompleteArrivee);
   };
 
-  // Fonction pour gérer la sélection d'une adresse
-  const handleSelectAddress = (address, setAddress, setAutocomplete) => {
-    setAddress(address);
-    setAutocomplete([]); // Efface les suggestions
+  const handleSelectAddress = (address, setter, autocompleteSetter) => {
+    setter(address);
+    autocompleteSetter([]);
+  };
+
+  const parseSteps = (steps) =>
+    steps.map((step) => ({
+      instruction: step.instructions,
+      distance: step.distance?.text || '',
+      duration: step.duration?.text || '',
+      travel_mode: step.travel_mode,
+      transit: step.travel_mode === "TRANSIT" ? {
+        line: step.transit?.line?.short_name || 'Ligne inconnue',
+        departure: step.transit?.departure_time?.text || '',
+        arrival: step.transit?.arrival_time?.text || '',
+        num_stops: step.transit?.num_stops || 0
+      } : null
+    }));
+
+  const getGoogleTravelMode = (key) => {
+    const modes = {
+      BICYCLING: window.google.maps.TravelMode.BICYCLING,
+      WALKING: window.google.maps.TravelMode.WALKING,
+      DRIVING: window.google.maps.TravelMode.DRIVING,
+      TRANSIT: window.google.maps.TravelMode.TRANSIT,
+    };
+    return modes[key];
+  };
+
+  const fetchDirections = async (modeKey) => {
+    if (!depart || !arrivee) return;
+    const travelMode = getGoogleTravelMode(modeKey);
+    if (!travelMode) return;
+
+    try {
+      setIsLoading(true);
+      const directionsService = new window.google.maps.DirectionsService();
+      const result = await new Promise((resolve, reject) => {
+        directionsService.route(
+          {
+            origin: depart,
+            destination: arrivee,
+            travelMode,
+            unitSystem: window.google.maps.UnitSystem.METRIC,
+          },
+          (result, status) => {
+            if (status === window.google.maps.DirectionsStatus.OK) {
+              resolve(result);
+            } else {
+              reject(status);
+            }
+          }
+        );
+      });
+
+      setDirections(result);
+      setTransport(modeKey);
+
+      const steps = parseSteps(result.routes[0].legs[0].steps);
+      setItineraireDetails((prev) => ({
+        ...prev,
+        [modeKey]: steps
+      }));
+
+    } catch (error) {
+      console.error("Erreur de directions:", error);
+      setErrorMessage(`Impossible de récupérer l'itinéraire pour le mode ${modeKey}`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    if (!depart || !arrivee) return;
+
+    setIsLoading(true);
+    setErrorMessage('');
+    try {
+      const modes = {
+        BICYCLING: window.google.maps.TravelMode.BICYCLING,
+        WALKING: window.google.maps.TravelMode.WALKING,
+        DRIVING: window.google.maps.TravelMode.DRIVING,
+        TRANSIT: window.google.maps.TravelMode.TRANSIT,
+      };
+
+      const results = await Promise.all(
+        Object.entries(modes).map(async ([key, mode]) => {
+          const directionsService = new window.google.maps.DirectionsService();
+          return new Promise((resolve) => {
+            directionsService.route(
+              {
+                origin: depart,
+                destination: arrivee,
+                travelMode: mode
+              },
+              (result, status) => {
+                if (status === window.google.maps.DirectionsStatus.OK) {
+                  resolve({ key, result });
+                } else {
+                  resolve({ key, result: null });
+                }
+              }
+            );
+          });
+        })
+      );
+
+      const newDurations = {};
+      const newItineraries = {};
+
+      results.forEach(({ key, result }) => {
+        if (result) {
+          newDurations[key] = result.routes[0].legs[0].duration.text;
+          newItineraries[key] = parseSteps(result.routes[0].legs[0].steps);
+        }
+      });
+
+      setDurations(newDurations);
+      setItineraireDetails(newItineraries);
+      
+      // Priorité à TRANSIT comme défaut
+      const transitResult = results.find(r => r.key === 'TRANSIT')?.result;
+      if (transitResult) {
+        setDirections(transitResult);
+        setTransport('TRANSIT');
+      } else if (results[0]?.result) { // Fallback au premier résultat disponible
+        setDirections(results[0].result);
+        setTransport(results[0].key);
+      }
+    } catch (error) {
+      console.error("Erreur lors de la recherche:", error);
+      setErrorMessage("Une erreur est survenue lors de la recherche des itinéraires.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -119,93 +210,58 @@ const Itineraires = () => {
         <div className="container mt-5">
           <div className="row">
             <div className="col-md-6">
-              <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }}>
-                <div className="mb-3">
-                  <label htmlFor="depart" className="form-label">Départ</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="depart"
-                    value={depart}
-                    onChange={handleDepartChange}
-                  />
-                  <ul className="autocomplete-list">
-                    {autocompleteDepart.map((place) => (
-                      <li key={place.place_id} onClick={() => handleSelectAddress(place.description, setDepart, setAutocompleteDepart)}>
-                        {place.description}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="arrivee" className="form-label">Arrivée</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="arrivee"
-                    value={arrivee}
-                    onChange={handleArriveeChange}
-                  />
-                  <ul className="autocomplete-list">
-                    {autocompleteArrivee.map((place) => (
-                      <li key={place.place_id} onClick={() => handleSelectAddress(place.description, setArrivee, setAutocompleteArrivee)}>
-                        {place.description}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <button type="submit" className="btn btn-danger">
-                  Rechercher
+              {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+              <form onSubmit={handleSearch}>
+                <AddressInput
+                  label="Départ"
+                  value={depart}
+                  onChange={handleDepartChange}
+                  autocompleteList={autocompleteDepart}
+                  onSelect={(address) => handleSelectAddress(address, setDepart, setAutocompleteDepart)}
+                  disabled={!googleLoaded}
+                />
+                <AddressInput
+                  label="Arrivée"
+                  value={arrivee}
+                  onChange={handleArriveeChange}
+                  autocompleteList={autocompleteArrivee}
+                  onSelect={(address) => handleSelectAddress(address, setArrivee, setAutocompleteArrivee)}
+                  disabled={!googleLoaded}
+                />
+                <button
+                  type="submit"
+                  className="btn btn-danger"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Recherche en cours...' : 'Rechercher'}
                 </button>
               </form>
-              <div className="transport-icons mt-3 d-flex justify-content-between">
-                <button onClick={() => handleTransportClick(window.google.maps.TravelMode.TRANSIT)} className="transport-button">
-                  <img src="Images/transport_commun.png" alt="Transport Commun" />
-                  <p>{durations.transport_commun || 'N/A'}</p>
-                </button>
-                <button onClick={() => handleTransportClick(window.google.maps.TravelMode.WALKING)} className="transport-button">
-                  <img src="Images/marche.png" alt="Marche" />
-                  <p>{durations.pied || 'N/A'}</p>
-                </button>
-                <button onClick={() => handleTransportClick(window.google.maps.TravelMode.BICYCLING)} className="transport-button">
-                  <img src="Images/velo.png" alt="Vélo" />
-                  <p>{durations.velo || 'N/A'}</p>
-                </button>
-                <button onClick={() => handleTransportClick(window.google.maps.TravelMode.DRIVING)} className="transport-button">
-                  <img src="Images/voiture.png" alt="Voiture" />
-                  <p>{durations.voiture || 'N/A'}</p>
-                </button>
-              </div>
 
-              {/* Affichage des suggestions d'itinéraires pour le mode de transport sélectionné */}
-              <div className="itineraire-suggestion mt-4">
-                <h4>Suggestions d'itinéraires pour {transport}</h4>
-                <ul>
-                  {itineraireDetails[transport]?.map((step, index) => (
-                    <li key={index}>
-                      {step.transit ? (
-                        <>
-                          <strong>{step.transit}</strong> - {step.instruction} (Arrivée estimée : {step.arrivalTime}, Attente : {step.waitTime} arrêts)
-                        </>
-                      ) : (
-                        step.instruction
-                      )}
-                    </li>
-                  )) || <li>Aucune suggestion disponible.</li>}
-                </ul>
-              </div>
+              <TransportIcons
+                durations={durations}
+                onTransportSelect={(mode) => {
+                  fetchDirections(mode);
+                  setTransport(mode);
+                }}
+              />
+
+              <ItineraryDetails
+                transport={transport}
+                steps={itineraireDetails[transport]}
+                isLoading={isLoading}
+              />
             </div>
 
             <div className="col-md-6">
-              <LoadScript googleMapsApiKey={import.meta.env.VITE_API_KEY_PROJECT} libraries={['places']}>
+              <LoadScript
+                googleMapsApiKey={import.meta.env.VITE_API_KEY_PROJECT}
+                libraries={libraries}
+              >
                 <GoogleMap
                   mapContainerClassName="map-container"
                   center={center}
                   zoom={13}
-                  options={{
-                    disableDefaultUI: true, // Désactive les contrôles par défaut
-                    zoomControl: true, // Active le contrôle de zoom
-                  }}
+                  options={{ disableDefaultUI: true, zoomControl: true }}
                 >
                   {directions && <DirectionsRenderer directions={directions} />}
                 </GoogleMap>
