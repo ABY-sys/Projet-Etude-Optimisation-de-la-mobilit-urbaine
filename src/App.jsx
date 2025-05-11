@@ -50,8 +50,8 @@ export default function App() {
         <div className="flex items-center space-x-4">
           <span>Nous suivre</span>
           <img src="/facebook.png" alt="Facebook" className="h-6" />
-          <img src="/instagram.png" alt="Instagram" className="h-6" />
-          <img src="/linkedin.png" alt="LinkedIn" className="h-6" />
+          <img src="/instagram.jpg" alt="Instagram" className="h-6" />
+          <img src="/linkedin.jpg" alt="LinkedIn" className="h-6" />
         </div>
       </footer>
     </div>
