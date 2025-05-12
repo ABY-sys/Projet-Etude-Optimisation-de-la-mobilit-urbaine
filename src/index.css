@@ -2,98 +2,238 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #f8f9fa;
 }
 
 .content {
-  flex: 1; 
-  padding: 110px; 
+  flex: 1;
+  padding: 20px;
 }
 
+/* Header */
 .navbar {
-  width: 100%;
-  z-index: 1000;
-}
-.navbar-logo {
-  height: 90px; 
-  width: auto; 
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.map-container {
-  height: calc(100vh - 110px); 
-  width: 100%; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+.navbar-logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Formulaire */
+.itinerary-controls {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .form-label {
   font-weight: bold;
+  color: #495057;
 }
 
+.search-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* Transport Icons */
 .transport-icons {
   display: flex;
-  justify-content: space-between; /* Espace entre les boutons */
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
 }
 
 .transport-button {
   display: flex;
-  flex-direction: column; /* Aligne l'icône et le texte verticalement */
-  align-items: center; /* Centre le contenu */
-  background-color: transparent; /* Fond transparent par défaut */
-  border: 2px solid transparent; /* Bordure transparente par défaut */
-  border-radius: 5px; /* Coins arrondis */
-  padding: 10px; /* Espacement interne */
-  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
-  transition: background-color 0.3s, border-color 0.3s; /* Transition pour l'effet hover */
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+  min-width: 100px;
 }
 
 .transport-button:hover {
-  background-color: white; /* Fond blanc au survol */
-  border-color: #ffffff; /* Bordure grise au survol */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-color: #adb5bd;
 }
 
-.transport-button img {
-  width: 40px; /* Ajustez la taille de l'icône selon vos besoins */
-  height: auto; /* Conserve le ratio d'aspect */
+.transport-button.active {
+  border-color: #4285F4;
+  background-color: #f8f9fa;
 }
 
-.transport-button p {
-  margin-top: 5px; /* Espacement entre l'icône et le texte */
-  color: black; /* Couleur du texte */
+.transport-duration {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 5px;
 }
 
+/* Carte */
+.map-container-wrapper {
+  padding-left: 15px;
+}
+
+.map-container {
+  height: 600px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Itinéraires */
+.itinerary-summaries {
+  margin: 20px 0;
+}
+
+.summary-card {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.summary-card:hover {
+  border-color: #4285F4;
+  box-shadow: 0 2px 8px rgba(66, 133, 244, 0.2);
+}
+
+.itinerary-details {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.step-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.step-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.transit-details {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+  border-left: 3px solid #4285F4;
+}
+.transit-line-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.step-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  
+  .col-md-6 {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .map-container-wrapper {
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+  
+  .transport-button {
+    min-width: 70px;
+    padding: 8px;
+  }
+}
+
+/* Autocomplete */
 .autocomplete-list {
-  list-style-type: none; /* Supprime les puces */
-  padding: 0; /* Supprime le padding */
-  margin: 0; /* Supprime la marge */
-  border: 1px solid #ccc; /* Bordure autour de la liste */
-  background-color: white; /* Fond blanc */
-  max-height: 200px; /* Hauteur maximale */
-  overflow-y: auto; /* Ajoute un défilement si nécessaire */
-  position: absolute; /* Positionnement absolu pour superposer la liste */
-  z-index: 1000; /* Assure que la liste est au-dessus des autres éléments */
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ced4da;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .autocomplete-list li {
-  padding: 10px; /* Espacement interne */
-  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
-  display: flex; /* Utilise flexbox pour aligner les éléments */
-  align-items: center; /* Centre verticalement */
+  padding: 10px;
+  cursor: pointer;
 }
 
 .autocomplete-list li:hover {
-  background-color: #f0f0f0; /* Change le fond au survol */
+  background-color: #f8f9fa;
 }
 
-.btn-danger {
-  margin-top: 10px;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
-.footer {
-  width: 100%;
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

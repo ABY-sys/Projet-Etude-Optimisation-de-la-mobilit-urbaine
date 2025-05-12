@@ -5,13 +5,14 @@ import Footer from '../Components/Footer';
 import AddressInput from '../Components/AddressInput';
 import TransportIcons from '../Components/TransportIcons';
 import ItineraryDetails from '../Components/ItineraryDetails';
+import ItinerarySummary from '../Components/ItinerarySummary'; 
 import '../index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Itineraires = () => {
   const [depart, setDepart] = useState('');
   const [arrivee, setArrivee] = useState('');
-  const [transport, setTransport] = useState('TRANSIT'); // Transport par défaut changé ici
+  const [transport, setTransport] = useState('TRANSIT'); 
   const [directions, setDirections] = useState(null);
   const [durations, setDurations] = useState({});
   const [autocompleteDepart, setAutocompleteDepart] = useState([]);
@@ -22,6 +23,7 @@ const Itineraires = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const center = { lat: 48.8566, lng: 2.3522 };
   const libraries = ["places"];
+  const [showDetails, setShowDetails] = useState(false); // État pour afficher les détails
 
   useEffect(() => {
     const checkGoogleMaps = () => {
@@ -77,7 +79,7 @@ const Itineraires = () => {
       duration: step.duration?.text || '',
       travel_mode: step.travel_mode,
       transit: step.travel_mode === "TRANSIT" ? {
-        line: step.transit?.line?.short_name || 'Ligne inconnue',
+        line: step.transit?.line?.name,
         departure: step.transit?.departure_time?.text || '',
         arrival: step.transit?.arrival_time?.text || '',
         num_stops: step.transit?.num_stops || 0
@@ -124,6 +126,8 @@ const Itineraires = () => {
       setTransport(modeKey);
 
       const steps = parseSteps(result.routes[0].legs[0].steps);
+      console.log("Étapes de l'itinéraire :", steps);
+
       setItineraireDetails((prev) => ({
         ...prev,
         [modeKey]: steps
@@ -191,7 +195,7 @@ const Itineraires = () => {
       if (transitResult) {
         setDirections(transitResult);
         setTransport('TRANSIT');
-      } else if (results[0]?.result) { // Fallback au premier résultat disponible
+      } else if (results[0]?.result) { 
         setDirections(results[0].result);
         setTransport(results[0].key);
       }
@@ -217,7 +221,7 @@ const Itineraires = () => {
                   value={depart}
                   onChange={handleDepartChange}
                   autocompleteList={autocompleteDepart}
-                  onSelect={(address) => handleSelectAddress(address, setDepart, setAutocompleteDepart)}
+ onSelect={(address) => handleSelectAddress(address, setDepart, setAutocompleteDepart)}
                   disabled={!googleLoaded}
                 />
                 <AddressInput
@@ -242,14 +246,32 @@ const Itineraires = () => {
                 onTransportSelect={(mode) => {
                   fetchDirections(mode);
                   setTransport(mode);
+                  setShowDetails(false); 
                 }}
               />
 
-              <ItineraryDetails
-                transport={transport}
-                steps={itineraireDetails[transport]}
-                isLoading={isLoading}
-              />
+              
+              {transport === 'TRANSIT' ? (
+                <>
+                  <ItinerarySummary
+                    steps={itineraireDetails[transport]}
+                    onShowDetails={() => setShowDetails(true)} 
+                  />
+                  {showDetails && (
+                    <ItineraryDetails
+                      transport={transport}
+                      steps={itineraireDetails[transport]}
+                      isLoading={isLoading}
+                    />
+                  )}
+                </>
+              ) : (
+                <ItineraryDetails
+                  transport={transport}
+                  steps={itineraireDetails[transport]}
+                  isLoading={isLoading}
+                />
+              )}
             </div>
 
             <div className="col-md-6">
