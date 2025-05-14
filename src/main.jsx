@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Accueil from "./pages/Accueil";
 import Trafic from "./pages/Trafic";
+import Inscription from "./pages/Inscription";
 import "./index.css";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
             <Link to="/trafic">Traffic</Link>
             <Link to="/bilan">Bilan carbone</Link>
           </nav>
-          <button className="bg-red-700 text-white px-4 py-2 rounded">Créer un compte</button>
+          <Link to="/register" className="bg-red-700 text-white px-4 py-2 rounded">Créer un compte</Link>
           <button className="bg-red-700 text-white px-4 py-2 rounded">Se connecter</button>
         </div>
       </header>
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={<Accueil />} />
         <Route path="/trafic" element={<Trafic />} />
         <Route path="/bilan" element={<div className='p-6'>Page Bilan carbone</div>} />
+        <Route path="/register" element={<Inscription />} />
       </Routes>
 
       {/* Footer global */}
