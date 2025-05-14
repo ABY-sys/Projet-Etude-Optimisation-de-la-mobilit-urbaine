@@ -3,7 +3,9 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
+
 
 .page-container {
   display: flex;
@@ -19,12 +21,16 @@ html, body {
 
 /* Header */
 .navbar {
-  background-color: #fff;
+  height: 70px; 
+  background-color: #fff; 
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center; 
+  
 }
 
 .navbar-logo {
-  height: 50px;
+  height: 60px;
   width: auto;
 }
 
@@ -87,16 +93,20 @@ html, body {
   margin-top: 5px;
 }
 
-/* Carte */
+/* Carte 
 .map-container-wrapper {
   padding-left: 15px;
-}
+}*/
 
 .map-container {
-  height: 600px;
-  border-radius: 8px;
-  border: 1px solid #dee2e6;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: 800px;
+  width: 800px;
+  border-radius: 1px;
+  padding : 50px;
+  margin-top: 30px;
+  margin-top: 20px;
+  /*border: 1px solid #dee2e6;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);*/
 }
 
 /* Itinéraires */
@@ -107,7 +117,7 @@ html, body {
 .summary-card {
   padding: 15px;
   margin-bottom: 10px;
-  border: 1px solid #dee2e6;
+  border: none;
   border-radius: 8px;
   background: white;
   cursor: pointer;
@@ -131,7 +141,7 @@ html, body {
 
 .step-item {
   padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: none;
 }
 
 .step-content {
