@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Accueil from "./pages/Accueil";
 import Trafic from "./pages/Trafic";
 import Inscription from "./pages/Inscription";
+import Connexion from "./pages/Connexion";
 import "./index.css";
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
             <Link to="/bilan">Bilan carbone</Link>
           </nav>
           <Link to="/register" className="bg-red-700 text-white px-4 py-2 rounded">Créer un compte</Link>
-          <button className="bg-red-700 text-white px-4 py-2 rounded">Se connecter</button>
+          <Link to="/login" className="bg-red-700 text-white px-4 py-2 rounded">Se connecter</Link>
         </div>
       </header>
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/trafic" element={<Trafic />} />
         <Route path="/bilan" element={<div className='p-6'>Page Bilan carbone</div>} />
         <Route path="/register" element={<Inscription />} />
+        <Route path="/login" element={<Connexion />} />
       </Routes>
 
       {/* Footer global */}
