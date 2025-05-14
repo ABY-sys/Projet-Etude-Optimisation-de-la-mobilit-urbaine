@@ -1,17 +1,23 @@
 import { useState } from "react";
 
 const TRANSPORTS = {
-  "Vue générale": ["RER", "A", "C", "D", "M", "1", "2", "4", "7", "14", "T8", "T9", "T10", "T12", "K", "P", "BUS"],
-  RER: ["RER", "A", "C", "D"],
-  Transilien: ["K", "P"],
-  Metro: ["1", "2", "4", "7", "14"],
+  "Vue générale": [
+    "RER", "A", "B", "C", "D",
+    "M", "1", "2", "4", "7", "14",
+    "T8", "T9", "T10", "T12",
+    "K", "P", "BUS"
+  ],
+  RER: ["RER", "A", "B", "C", "D"],
+  Metro: ["M", "1", "2", "4", "7", "14"],
   Tram: ["T8", "T9", "T10", "T12"],
+  Transilien: ["K", "P"],
   Bus: ["BUS"]
 };
 
 const COLORS = {
   RER: "bg-white text-black border border-black",
   A: "bg-red-600 text-white",
+  B: "bg-blue-600 text-white",
   C: "bg-yellow-400 text-black",
   D: "bg-green-600 text-white",
   M: "bg-gray-800 text-white",
@@ -31,6 +37,7 @@ const COLORS = {
 
 export default function TabsTraffic() {
   const [selectedTab, setSelectedTab] = useState("Vue générale");
+
   const tabs = Object.keys(TRANSPORTS);
   const lines = TRANSPORTS[selectedTab];
 
@@ -50,18 +57,39 @@ export default function TabsTraffic() {
         ))}
       </div>
       <div className="bg-white p-6 shadow-md rounded-b-lg">
-        <div className="flex flex-wrap gap-4 items-center">
-          {lines.map((line) => (
-            <div
-              key={line}
-              className={`w-12 h-12 flex items-center justify-center rounded-full text-lg font-bold ${
-                COLORS[line] || "bg-gray-200"
-              }`}
-            >
-              {line}
-            </div>
-          ))}
-        </div>
+        {selectedTab === "Vue générale" ? (
+          <>
+            {["RER", "Metro", "Tram", "Transilien", "Bus"].map((category) => (
+              <div key={category} className="mb-6">
+                <div className="flex flex-wrap gap-4 items-center">
+                  {TRANSPORTS[category].map((line) => (
+                    <div
+                      key={line}
+                      className={`w-12 h-12 flex items-center justify-center rounded-full text-lg font-bold ${
+                        COLORS[line] || "bg-gray-200"
+                      }`}
+                    >
+                      {line}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </>
+        ) : (
+          <div className="flex flex-wrap gap-4 items-center">
+            {lines.map((line) => (
+              <div
+                key={line}
+                className={`w-12 h-12 flex items-center justify-center rounded-full text-lg font-bold ${
+                  COLORS[line] || "bg-gray-200"
+                }`}
+              >
+                {line}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
