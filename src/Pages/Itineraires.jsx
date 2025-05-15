@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, DirectionsRenderer } from '@react-google-maps/api';
+import { useLocation } from 'react-router-dom'; // Importer useLocation pour récupérer les paramètres de l'URL
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import AddressInput from '../Components/AddressInput';
@@ -10,8 +11,13 @@ import '../index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Itineraires = () => {
-  const [depart, setDepart] = useState('');
-  const [arrivee, setArrivee] = useState('');
+  const location = useLocation(); // Récupérer les paramètres de l'URL
+  const queryParams = new URLSearchParams(location.search);
+  const initialDepart = queryParams.get('depart') || ''; // Récupérer le départ
+  const initialArrivee = queryParams.get('arrivee') || ''; // Récupérer l'arrivée
+
+  const [depart, setDepart] = useState(initialDepart);
+  const [arrivee, setArrivee] = useState(initialArrivee);
   const [transport, setTransport] = useState('TRANSIT'); 
   const [directions, setDirections] = useState(null);
   const [durations, setDurations] = useState({});
@@ -35,6 +41,12 @@ const Itineraires = () => {
     };
     checkGoogleMaps();
   }, []);
+
+  useEffect(() => {
+    if (depart && arrivee) {
+      handleSearch(); // Lancer la recherche automatiquement si départ et arrivée sont disponibles
+    }
+  }, [depart, arrivee]);
 
   const handleAddressChange = (input, setAutocomplete) => {
     if (googleLoaded && input.length > 2) {
@@ -141,8 +153,7 @@ const Itineraires = () => {
     }
   };
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
+  const handleSearch = async () => {
     if (!depart || !arrivee) return;
 
     setIsLoading(true);
@@ -215,13 +226,13 @@ const Itineraires = () => {
           <div className="row">
             <div className="col-md-6">
               {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
-              <form onSubmit={handleSearch}>
+              <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }}>
                 <AddressInput
                   label="Départ"
                   value={depart}
                   onChange={handleDepartChange}
                   autocompleteList={autocompleteDepart}
- onSelect={(address) => handleSelectAddress(address, setDepart, setAutocompleteDepart)}
+                  onSelect={(address) => handleSelectAddress(address, setDepart, setAutocompleteDepart)}
                   disabled={!googleLoaded}
                 />
                 <AddressInput
@@ -250,7 +261,6 @@ const Itineraires = () => {
                 }}
               />
 
-              
               {transport === 'TRANSIT' ? (
                 <>
                   <ItinerarySummary
