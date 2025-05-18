@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { GoogleMap, LoadScript, DirectionsRenderer } from '@react-google-maps/api';
-import { useLocation } from 'react-router-dom'; // Importer useLocation pour récupérer les paramètres de l'URL
+import { useLocation } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import AddressInput from '../Components/AddressInput';
@@ -11,10 +11,10 @@ import '../index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Itineraires = () => {
-  const location = useLocation(); // Récupérer les paramètres de l'URL
+  const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const initialDepart = queryParams.get('depart') || ''; // Récupérer le départ
-  const initialArrivee = queryParams.get('arrivee') || ''; // Récupérer l'arrivée
+  const initialDepart = queryParams.get('depart') || '';
+  const initialArrivee = queryParams.get('arrivee') || '';
 
   const [depart, setDepart] = useState(initialDepart);
   const [arrivee, setArrivee] = useState(initialArrivee);
@@ -24,32 +24,29 @@ const Itineraires = () => {
   const [autocompleteDepart, setAutocompleteDepart] = useState([]);
   const [autocompleteArrivee, setAutocompleteArrivee] = useState([]);
   const [itineraireDetails, setItineraireDetails] = useState({});
-  const [googleLoaded, setGoogleLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [showDetails, setShowDetails] = useState(false);
+  const [mapLoaded, setMapLoaded] = useState(false);
+
   const center = { lat: 48.8566, lng: 2.3522 };
   const libraries = ["places"];
-  const [showDetails, setShowDetails] = useState(false); // État pour afficher les détails
 
-  useEffect(() => {
-    const checkGoogleMaps = () => {
-      if (typeof window.google !== 'undefined' && window.google.maps) {
-        setGoogleLoaded(true);
-      } else {
-        setTimeout(checkGoogleMaps, 100);
-      }
-    };
-    checkGoogleMaps();
+  const handleMapLoad = useCallback(() => {
+    setMapLoaded(true);
   }, []);
 
   useEffect(() => {
-    if (depart && arrivee) {
-      handleSearch(); // Lancer la recherche automatiquement si départ et arrivée sont disponibles
+    if (depart && arrivee && mapLoaded) {
+      handleSearch();
     }
-  }, [depart, arrivee]);
+  }, [depart, arrivee, mapLoaded]);
+  
+  
+  
 
   const handleAddressChange = (input, setAutocomplete) => {
-    if (googleLoaded && input.length > 2) {
+    if (window.google && input.length > 2) {
       const autocompleteService = new window.google.maps.places.AutocompleteService();
       autocompleteService.getPlacePredictions(
         {
@@ -138,8 +135,6 @@ const Itineraires = () => {
       setTransport(modeKey);
 
       const steps = parseSteps(result.routes[0].legs[0].steps);
-      console.log("Étapes de l'itinéraire :", steps);
-
       setItineraireDetails((prev) => ({
         ...prev,
         [modeKey]: steps
@@ -200,13 +195,12 @@ const Itineraires = () => {
 
       setDurations(newDurations);
       setItineraireDetails(newItineraries);
-      
-      // Priorité à TRANSIT comme défaut
+
       const transitResult = results.find(r => r.key === 'TRANSIT')?.result;
       if (transitResult) {
         setDirections(transitResult);
         setTransport('TRANSIT');
-      } else if (results[0]?.result) { 
+      } else if (results[0]?.result) {
         setDirections(results[0].result);
         setTransport(results[0].key);
       }
@@ -233,7 +227,7 @@ const Itineraires = () => {
                   onChange={handleDepartChange}
                   autocompleteList={autocompleteDepart}
                   onSelect={(address) => handleSelectAddress(address, setDepart, setAutocompleteDepart)}
-                  disabled={!googleLoaded}
+                  disabled={!mapLoaded}
                 />
                 <AddressInput
                   label="Arrivée"
@@ -241,7 +235,7 @@ const Itineraires = () => {
                   onChange={handleArriveeChange}
                   autocompleteList={autocompleteArrivee}
                   onSelect={(address) => handleSelectAddress(address, setArrivee, setAutocompleteArrivee)}
-                  disabled={!googleLoaded}
+                  disabled={!mapLoaded}
                 />
                 <button
                   type="submit"
@@ -288,6 +282,7 @@ const Itineraires = () => {
               <LoadScript
                 googleMapsApiKey={import.meta.env.VITE_API_KEY_PROJECT}
                 libraries={libraries}
+                onLoad={handleMapLoad}
               >
                 <GoogleMap
                   mapContainerClassName="map-container"

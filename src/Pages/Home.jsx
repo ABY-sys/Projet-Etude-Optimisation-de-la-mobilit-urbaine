@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importer useNavigate pour la redirection
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import AddressInput from "../Components/AddressInput"; 
@@ -11,8 +11,26 @@ const Home = () => {
   const [autocompleteDepart, setAutocompleteDepart] = useState([]);
   const [autocompleteArrivee, setAutocompleteArrivee] = useState([]);
   const [googleLoaded, setGoogleLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Ajout de l'état isLoading
-  const navigate = useNavigate(); // Hook pour la redirection
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  // Chargement de l'API Google Maps
+  useEffect(() => {
+    const loadGoogleMaps = () => {
+      if (!window.google) {
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_API_KEY_PROJECT}&libraries=places`;
+        script.async = true;
+        script.defer = true;
+        script.onload = () => setGoogleLoaded(true);
+        document.head.appendChild(script);
+      } else {
+        setGoogleLoaded(true);
+      }
+    };
+
+    loadGoogleMaps();
+  }, []);
 
   const handleAddressChange = (input, setAutocomplete) => {
     if (googleLoaded && input.length > 2) {
@@ -53,10 +71,9 @@ const Home = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     if (depart && arrivee) {
-      setIsLoading(true); // Démarrer le chargement
-      // Rediriger vers la page d'itinéraire avec les paramètres
+      setIsLoading(true);
       navigate(`/Itineraires?depart=${encodeURIComponent(depart)}&arrivee=${encodeURIComponent(arrivee)}`);
-      setIsLoading(true); // Arrêter le chargement après la redirection
+      setIsLoading(false);
     }
   };
 
@@ -64,52 +81,53 @@ const Home = () => {
     <div className="page-container">
       <Header />
       <main className="content">
-        <h1>Accueil</h1>
-        <div className="relative">
-          <img src="public/Images/background_home_page.jpg" alt="Gare" className="img-fluid gare-image" />
-          <div className="form-container">
-            <h2 className="form-title">Où allez-vous?</h2>
-            <form onSubmit={handleSearch}>
-              <AddressInput
-                label="Départ"
-                value={depart}
-                onChange={handleDepartChange}
-                autocompleteList={autocompleteDepart}
-                onSelect={(address) => handleSelectAddress(address, setDepart, setAutocompleteDepart)}
-                disabled={!googleLoaded}
-              />
-              <AddressInput
-                label="Arrivée"
-                value={arrivee}
-                onChange={handleArriveeChange}
-                autocompleteList={autocompleteArrivee}
-                onSelect={(address) => handleSelectAddress(address, setArrivee, setAutocompleteArrivee)}
-                disabled={!googleLoaded}
-              />
-              <button
-                type="submit"
-                className="btn btn-danger"
-                disabled={isLoading} // Désactiver le bouton si isLoading est vrai
-              >
-                {isLoading ? 'Recherche en cours...' : 'Rechercher'}
-              </button>
-            </form>
-          </div>
-        </div>
+      <h1>Accueil</h1>
 
-        <div className="traffic-container">
-          <h3 className="traffic-title">Point traffic</h3>
-          <div className="traffic-icons">
-            {['RER', 'A', 'B', 'C', 'M', '14', '1', 'T12', 'T10', 'BUS'].map((line) => (
-              <div key={line} className="traffic-icon" style={{ backgroundColor: getColor(line) }}>
-                {line}
-              </div>
-            ))}
-          </div>
-          <p className="traffic-info">Cliquer ici pour plus d'informations</p>
+      <div className="gare-section">
+        <img src="Images/background_home_page.jpg" alt="Gare" className="gare-image" />
+        <div className="form-container">
+          <h2 className="form-title">Où allez-vous?</h2>
+          <form onSubmit={handleSearch}>
+            <AddressInput
+              label="Départ"
+              value={depart}
+              onChange={handleDepartChange}
+              autocompleteList={autocompleteDepart}
+              onSelect={(address) => handleSelectAddress(address, setDepart, setAutocompleteDepart)}
+              disabled={!googleLoaded}
+            />
+            <AddressInput
+              label="Arrivée"
+              value={arrivee}
+              onChange={handleArriveeChange}
+              autocompleteList={autocompleteArrivee}
+              onSelect={(address) => handleSelectAddress(address, setArrivee, setAutocompleteArrivee)}
+              disabled={!googleLoaded}
+            />
+            <button
+              type="submit"
+              className="btn btn-danger"
+              disabled={isLoading || !googleLoaded}
+            >
+              {isLoading ? 'Recherche en cours...' : 'Rechercher'}
+            </button>
+          </form>
         </div>
-      </main>
-      <Footer />
+      </div>
+
+      <div className="traffic-container">
+        <h3 className="traffic-title">Point trafic</h3>
+        <div className="traffic-icons">
+          {['RER', 'A', 'B', 'C', 'M', '14', '1', 'T12', 'T10', 'BUS'].map((line) => (
+            <div key={line} className="traffic-icon" style={{ backgroundColor: getColor(line) }}>
+              {line}
+            </div>
+          ))}
+        </div>
+        <p className="traffic-info">Cliquer ici pour plus d'informations</p>
+      </div>
+    </main>
+    <Footer />
     </div>
   );
 }
