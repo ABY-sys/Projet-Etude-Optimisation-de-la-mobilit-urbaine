@@ -1,73 +1,103 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase"; 
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import "../index.css";
 
-export default function Inscription() {
+const Inscription = () => {
+  const navigate = useNavigate();
+  const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const navigate = useNavigate();
+  const [message, setMessage] = useState(""); // État pour le message de succès ou d'erreur
 
-  const handleSubmit = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-
-    const users = JSON.parse(localStorage.getItem("users") || "[]");
-
-    const userExists = users.find((user) => user.email === email);
-    if (userExists) {
-      setMessage("Un compte existe déjà avec cet email.");
-      return;
+    setMessage(""); // Réinitialiser le message avant chaque soumission
+    try {
+      // Créer l'utilisateur avec Firebase Authentication
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log("Utilisateur créé :", user.uid);
+  
+      // Envoyer les données à votre backend
+      const response = await fetch('https://us-central1-projet-etude-sdv.cloudfunctions.net/registerUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          full_name: nom,
+          email: email,
+          password: password
+        })
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        // Inscription réussie
+        setMessage("Utilisateur créé avec succès : " + data.userId);
+        navigate("/"); // Rediriger vers la page d'accueil ou une autre page
+      } else {
+        // Gérer les erreurs du backend
+        setMessage("Erreur : " + data.error);
+      }
+    } catch (error) {
+      console.error("Erreur à l'inscription :", error.message);
+      setMessage("Erreur : " + error.message);
     }
+  };  
 
-    users.push({ email, password });
-    localStorage.setItem("users", JSON.stringify(users));
-    setMessage("Compte créé avec succès !");
-    setTimeout(() => navigate("/login"), 1000);
-  };
-
- return (
-  <div className="relative min-h-screen">
-    {/* Image de fond */}
-    <img
-      src="/gare.jpg"
-      alt="fond"
-      className="absolute inset-0 w-full h-full object-cover z-0"
-    />
-
-    {/* Overlay sombre léger */}
-    <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-
-    {/* Formulaire centré */}
-    <div className="relative z-20 flex justify-center items-center min-h-screen">
-      <div className="w-full max-w-md bg-white bg-opacity-95 p-6 rounded shadow-md">
-        <h2 className="text-xl font-bold mb-4 text-center">Créer un compte</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block mb-1">Adresse email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full border p-2 rounded"
-            />
-          </div>
-          <div>
-            <label className="block mb-1">Mot de passe</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-full border p-2 rounded"
-            />
-          </div>
-          <button type="submit" className="bg-red-700 text-white px-4 py-2 rounded w-full">
-            Créer mon compte
-          </button>
-        </form>
-        {message && <p className="mt-4 text-sm text-center text-gray-700">{message}</p>}
-      </div>
+  return (
+    <div className="page-container">
+      <Header />
+      <main className="content">
+        <div className="form-container">
+          <h2 className="form-title">Créer un compte</h2>
+          <form onSubmit={handleSignup}>
+            <div className="form-group">
+              <label>Nom</label>
+              <input
+                type="text"
+                className="form-control"
+                value={nom}
+                onChange={(e) => setNom(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Email</label>
+              <input
+                type="email"
+                className="form-control"
+ value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Mot de passe</label>
+              <input
+                type="password"
+                className="form-control"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit" className="btn btn-danger mt-3">
+              S'inscrire
+            </button>
+          </form>
+          {message && <p className="message">{message}</p>} {/* Afficher le message de succès ou d'erreur */}
+        </div>
+      </main>
+      <Footer />
     </div>
-  </div>
-);
-}
+  );
+};
+
+export default Inscription;
