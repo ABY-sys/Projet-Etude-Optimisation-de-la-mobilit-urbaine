@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import Connexion from "./Pages/Connexion";
 import Inscription from "./Pages/Inscription";
 import Itineraires from "./Pages/Itineraires";
-import BilanCarbone from "./Pages/Bilan_carbone";
+import Traffic from "./Pages/Traffic"; // Renommé ici
 import TestMap from "./Pages/test";
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Connexion" element={<Connexion/>} />
+        <Route path="/Connexion" element={<Connexion />} />
         <Route path="/Inscription" element={<Inscription />} />
         <Route path="/Itineraires" element={<Itineraires />} />
-        <Route path="/Bilan_Carbone" element={<BilanCarbone />} />
+        <Route path="/Traffic" element={<Traffic />} /> 
         <Route path="/test" element={<TestMap />} />
       </Routes>
     </Router>

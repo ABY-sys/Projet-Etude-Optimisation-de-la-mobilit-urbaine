@@ -1,70 +1,74 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../firebase";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import "../index.css";
 
-export default function Connexion() {
+
+const Connexion = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-
-    const users = JSON.parse(localStorage.getItem("users") || "[]");
-    const user = users.find((u) => u.email === email && u.password === password);
-
-    if (user) {
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("currentUser", JSON.stringify(user));
-      setMessage("Connexion réussie !");
-      setTimeout(() => navigate("/"), 1000);
-    } else {
-      setMessage("Identifiants incorrects. Veuillez réessayer.");
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log("Connecté :", user.uid);
+  
+      navigate("/");
+    } catch (error) {
+      console.error("Erreur à la connexion :", error.message);
+      setMessage("Email ou mot de passe incorrect.");
     }
   };
 
   return (
-    <div className="relative min-h-screen">
-      {/* Image de fond */}
-      <img
-        src="/gare.jpg"
-        alt="fond"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
-
-      <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-
-      <div className="relative z-20 flex justify-center items-center min-h-screen">
-        <div className="w-full max-w-md bg-white bg-opacity-95 p-6 rounded shadow-md">
-          <h2 className="text-xl font-bold mb-4 text-center">Connexion</h2>
-          <form onSubmit={handleLogin} className="space-y-4">
-            <div>
-              <label className="block mb-1">Adresse email</label>
+    <div className="page-container">
+      <Header />
+      <main className="content">
+        <div className="form-container">
+          <h2 className="form-title text-center">Se connecter</h2>
+          <form onSubmit={handleLogin}>
+            <div className="form-group">
+              <label>Email</label>
               <input
                 type="email"
+                className="form-control"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full border p-2 rounded"
               />
             </div>
-            <div>
-              <label className="block mb-1">Mot de passe</label>
+            <div className="form-group">
+              <label>Mot de passe</label>
               <input
                 type="password"
+                className="form-control"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full border p-2 rounded"
               />
             </div>
-            <button type="submit" className="bg-red-700 text-white px-4 py-2 rounded w-full">
-              Se connecter
-            </button>
+            <div className="d-flex justify-content-center">
+              <button type="submit" className="btn btn-danger mt-3">
+                Connexion
+              </button>
+            </div>
           </form>
-          {message && <p className="mt-4 text-sm text-center text-gray-700">{message}</p>}
+          {message && <p className="message">{message}</p>}
+          <p className="mt-3">
+            Pas encore de compte ? <Link to="/Inscription">Inscrivez-vous</Link>
+          </p>
         </div>
-      </div>
+      </main>
+      <Footer />
     </div>
   );
-}
+};
+
+export default Connexion;

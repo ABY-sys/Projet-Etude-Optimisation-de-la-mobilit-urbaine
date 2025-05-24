@@ -112,7 +112,7 @@ const TRANSPORTS = {
   ],
 };
 
-const Test = () => {
+const Traffic = () => {
   const [selectedTab, setSelectedTab] = useState("General"); // Valeur par défaut
   const [currentTime, setCurrentTime] = useState(""); // État pour l'heure actuelle
 
@@ -201,4 +201,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Traffic;

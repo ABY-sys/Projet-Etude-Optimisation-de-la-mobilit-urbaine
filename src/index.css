@@ -6,7 +6,6 @@ html, body {
   overflow-x: hidden;
 }
 
-
 .page-container {
   display: flex;
   flex-direction: column;
@@ -26,13 +25,13 @@ html, body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
   align-items: center; 
-  
 }
 
 .navbar-logo {
   height: 60px;
   width: auto;
 }
+
 .gare-section {
   position: relative;
   height: 80vh; 
@@ -267,13 +266,53 @@ html, body {
   justify-content: center;
 }
 
-/* Footer */
-.footer {
-  background-color: #343a40;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+/* Style pour le conteneur principal de la page de trafic */
+.traffic-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f8f9fa
 }
+
+/* Style pour le bouton de sélection de transport */
+.traffic-btn {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  background-color: #dc3545;
+}
+
+/* Style pour le bloc de trafic */
+.traffic-block {
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  margin: 20px auto;
+}
+
+/* Style pour les icônes des moyens de transport */
+.custom-transport-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+/* Style pour les icônes des lignes de transport */
+.line-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px; /* Espace entre les icônes de lignes */
+}
+
+/* Style pour les boutons des lignes */
+.line-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
 
 /* Responsive */
 @media (max-width: 768px){

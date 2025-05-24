@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { GoogleMap, LoadScript, DirectionsRenderer } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, DirectionsRenderer } from '@react-google-maps/api';
 import { useLocation } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
@@ -32,17 +32,26 @@ const Itineraires = () => {
   const center = { lat: 48.8566, lng: 2.3522 };
   const libraries = ["places"];
 
-  const handleMapLoad = useCallback(() => {
-    setMapLoaded(true);
+  const { isLoaded, loadError } = useJsApiLoader({
+    googleMapsApiKey: import.meta.env.VITE_API_KEY_PROJECT,
+    libraries: ["places"],
+  });  
+
+  const [map, setMap] = useState(null);
+
+  const onLoad = useCallback((mapInstance) => {
+    setMap(mapInstance);
+  }, []);
+  
+  const onUnmount = useCallback(() => {
+    setMap(null);
   }, []);
 
   useEffect(() => {
-    if (depart && arrivee && mapLoaded) {
+    if (depart && arrivee && isLoaded) {
       handleSearch();
     }
-  }, [depart, arrivee, mapLoaded]);
-  
-  
+  }, [depart, arrivee, isLoaded]);  
   
 
   const handleAddressChange = (input, setAutocomplete) => {
@@ -215,7 +224,7 @@ const Itineraires = () => {
   return (
     <div className="page-container">
       <Header />
-      <main className="content">
+      <main className="content" style={{ marginTop: '50px', padding: '10px' }}>
         <div className="container mt-5">
           <div className="row">
             <div className="col-md-6">
@@ -227,7 +236,7 @@ const Itineraires = () => {
                   onChange={handleDepartChange}
                   autocompleteList={autocompleteDepart}
                   onSelect={(address) => handleSelectAddress(address, setDepart, setAutocompleteDepart)}
-                  disabled={!mapLoaded}
+                  disabled={!isLoaded}
                 />
                 <AddressInput
                   label="Arrivée"
@@ -235,15 +244,17 @@ const Itineraires = () => {
                   onChange={handleArriveeChange}
                   autocompleteList={autocompleteArrivee}
                   onSelect={(address) => handleSelectAddress(address, setArrivee, setAutocompleteArrivee)}
-                  disabled={!mapLoaded}
+                  disabled={!isLoaded}
                 />
-                <button
-                  type="submit"
-                  className="btn btn-danger"
-                  disabled={isLoading}
-                >
-                  {isLoading ? 'Recherche en cours...' : 'Rechercher'}
+                <div className="d-flex justify-content-center">
+                  <button
+                    type="submit"
+                    className="btn btn-danger"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? 'Recherche en cours...' : 'Rechercher'}
                 </button>
+                </div>
               </form>
 
               <TransportIcons
@@ -279,20 +290,19 @@ const Itineraires = () => {
             </div>
 
             <div className="col-md-6">
-              <LoadScript
-                googleMapsApiKey={import.meta.env.VITE_API_KEY_PROJECT}
-                libraries={libraries}
-                onLoad={handleMapLoad}
-              >
+              {!isLoaded ? (
+                <p>Chargement de la carte...</p>
+              ) : (
                 <GoogleMap
                   mapContainerClassName="map-container"
                   center={center}
                   zoom={13}
-                  options={{ disableDefaultUI: true, zoomControl: true }}
+                  onLoad={onLoad}
+                  onUnmount={onUnmount}
                 >
                   {directions && <DirectionsRenderer directions={directions} />}
                 </GoogleMap>
-              </LoadScript>
+              )}
             </div>
           </div>
         </div>

@@ -1,81 +1,66 @@
 // functions/index.js
 
 require('dotenv').config();
-const functions = require('firebase-functions');
 const { onRequest } = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 
 const admin = require('firebase-admin');
-const cors = require('cors');
 const { Pool } = require('pg');
 
 admin.initializeApp();
 
-const corsOptions = {
-  origin: 'http://localhost:5174',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
+
+const dbConfig = {
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 };
 
-const corsMiddleware = cors(corsOptions);
 
-const dbConfig = functions.config().db;
-if (!dbConfig || !dbConfig.user) {
+// Vérification de la configuration de la base de données
+if (!dbConfig.user || !dbConfig.host || !dbConfig.database || !dbConfig.password || !dbConfig.port) {
   logger.error('Configuration de la base de données manquante');
   throw new Error('Configuration de la base de données manquante');
 }
 
+// Affichage de la configuration de la base de données pour le débogage
+console.log('DB Config:', dbConfig);
 
 // Configuration de la connexion à Cloud SQL
-const pool = new Pool({
-  user: functions.config().db.user,
-  host: functions.config().db.host,
-  database: functions.config().db.name,
-  password: functions.config().db.password,
-  port: functions.config().db.port,
-});
-
+const pool = new Pool(dbConfig);
 
 // Fonction d'inscription
-exports.registerUser = onRequest((req, res) => {
-  corsMiddleware(req, res, async () => {
+exports.registerUser = onRequest({ cors: true }, async(req, res) => {
     if (req.method !== 'POST') {
-      logger.warn('Method Not Allowed'); // Utilisation de logger
+      logger.warn('Method Not Allowed');
       return res.status(405).send('Method Not Allowed');
     }
 
-    const { full_name, email, password } = req.body;
+    const { full_name, email, uid } = req.body;  // Récupérer l'UID depuis le frontend
 
-    // Validation des données
-    if (!full_name || !email || !password) {
-      logger.error('Tous les champs sont requis.'); // Utilisation de logger
-      return res.status(400).json({ error: 'Tous les champs sont requis.' });
+    if (!full_name || !email || !uid) {  // Vérifier que l'UID est bien passé
+      logger.error('Tous les champs sont requis (y compris l\'UID).');
+      return res.status(400).json({ error: 'Tous les champs sont requis (y compris l\'UID).' });
     }
 
     try {
-      // Création de l'utilisateur dans Firebase
-      const userRecord = await admin.auth().createUser({
-        email,
-        password,
-        displayName: full_name,
-      });
+      const client = await pool.connect();
+      console.log('Connexion réussie à la base de données');
 
       // Enregistrement dans Cloud SQL
-      await pool.query(
+      await client.query(
         'INSERT INTO user_profiles (firebase_uid, full_name, email, created_at) VALUES ($1, $2, $3, NOW())',
-        [userRecord.uid, full_name, email]
+        [uid, full_name, email]  // Utiliser l'UID reçu
       );
+      client.release();
 
-      // Réponse réussie
-      logger.info('Utilisateur créé avec succès.', { userId: userRecord.uid }); // Utilisation de logger
-      return res.status(201).json({ message: 'Utilisateur créé avec succès.', userId: userRecord.uid });
+      logger.info('Utilisateur enregistré dans la base de données.', { userId: uid });
+      return res.status(201).json({ message: 'Utilisateur enregistré avec succès dans la base de données.', userId: uid });
     } catch (error) {
-      console.error('Erreur lors de l\'inscription:', error);
-      logger.error('Erreur lors de l\'inscription:', error); // Utilisation de logger
-      if (error.code === 'auth/email-already-exists') {
-        return res.status(400).json({ error: 'L\'email est déjà utilisé.' });
-      }
-      return res.status(500).json({ error: 'Erreur lors de l\'inscription.' });
+      console.error('Erreur lors de l\'enregistrement dans la base de données:', error);
+      logger.error('Erreur lors de l\'enregistrement dans la base de données:', error);
+      return res.status(500).json({ error: 'Erreur lors de l\'enregistrement dans la base de données.' });
     }
-  });
 });
