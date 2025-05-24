@@ -86,7 +86,7 @@ const Home = () => {
       <div className="gare-section">
         <img src="Images/background_home_page.jpg" alt="Gare" className="gare-image" />
         <div className="form-container">
-          <h2 className="form-title">Où allez-vous?</h2>
+          <h2 className="form-title text-center">Où allez-vous?</h2>
           <form onSubmit={handleSearch}>
             <AddressInput
               label="Départ"
@@ -104,13 +104,15 @@ const Home = () => {
               onSelect={(address) => handleSelectAddress(address, setArrivee, setAutocompleteArrivee)}
               disabled={!googleLoaded}
             />
-            <button
-              type="submit"
-              className="btn btn-danger"
-              disabled={isLoading || !googleLoaded}
-            >
-              {isLoading ? 'Recherche en cours...' : 'Rechercher'}
-            </button>
+            <div className="d-flex justify-content-center">
+              <button
+                type="submit"
+                className="btn btn-danger"
+                disabled={isLoading || !googleLoaded}
+              >
+                {isLoading ? 'Recherche en cours...' : 'Rechercher'}
+              </button>
+            </div>
           </form>
         </div>
       </div>

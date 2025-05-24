@@ -12,13 +12,14 @@ export default [
       globals: globals.browser,
       parserOptions: {
         ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
+        ecmaFeatures: { jsx: true},
         sourceType: 'module',
       },
     },
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -30,4 +31,17 @@ export default [
       ],
     },
   },
-]
+
+  {
+    // Configuration spécifique pour les fichiers de fonctions Firebase
+    files: ['functions/**/*.{js,jsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.node, // Assurez-vous que les globals Node.js sont disponibles ici aussi
+      },
+    },
+    rules: {
+      // Vous pouvez ajouter des règles spécifiques pour les fonctions ici si nécessaire
+    },
+  },
+];

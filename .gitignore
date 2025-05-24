@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 node_modules/
+fucnctions/node_modules
 .env
 .DS_Store

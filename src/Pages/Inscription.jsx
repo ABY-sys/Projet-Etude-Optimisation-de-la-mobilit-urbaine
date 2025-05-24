@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase"; 
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../firebase"; 
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "../index.css";
@@ -15,45 +16,27 @@ const Inscription = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    setMessage(""); // Réinitialiser le message avant chaque soumission
+    setMessage("");
     try {
-      // Créer l'utilisateur avec Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      console.log("Utilisateur créé :", user.uid);
-      const idToken = await user.getIdToken();
-      const response = await fetch('https://registeruser-vqusi6wjfa-uc.a.run.app', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${idToken}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          full_name: nom,
-          email: email,
-          uid: user.uid
-        })
+
+      // Utilise Firestore pour enregistrer les informations de l'utilisateur
+      await setDoc(doc(db, "users", user.uid), {
+        full_name: nom,
+        email: email,
+        uid: user.uid,
       });
-  
-      const data = await response.json();
-  
-      if (response.ok) {
-        // Inscription réussie
-        setMessage("Utilisateur créé avec succès : " + data.userId);
-        navigate("/"); // Rediriger vers la page d'accueil ou une autre page
-      } else {
-        // Gérer les erreurs du backend
-        setMessage("Erreur : " + data.error);
-       }
-      setMessage("Utilisateur créé avec succès, vous allez être redirigé vers la page de connexion");
+
+      setMessage("Utilisateur créé avec succès ! Redirection...");
       setTimeout(() => {
-        navigate("/connexion");
-      }, 3000);
+        navigate("/Connexion");
+      }, 1000);
     } catch (error) {
       console.error("Erreur à l'inscription :", error.message);
-      setMessage("Addresse email déjà utilisée");
+      setMessage("Erreur : " + error.message); // Affiche l'erreur à l'utilisateur
     }
-  };  
+  };
 
   return (
     <div className="page-container">

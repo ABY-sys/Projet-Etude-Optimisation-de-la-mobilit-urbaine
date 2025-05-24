@@ -33,6 +33,17 @@ const pool = new Pool(dbConfig);
 
 // Fonction d'inscription
 exports.registerUser = onRequest({ cors: true }, async(req, res) => {
+    // Add CORS headers
+    res.set('Access-Control-Allow-Origin', '*'); // Allow all origins for development.  For production, specify your frontend's origin.
+    res.set('Access-Control-Allow-Methods', 'POST'); // Specify allowed methods
+    res.set('Access-Control-Allow-Headers', 'Content-Type'); // Specify allowed headers
+
+    if (req.method === 'OPTIONS') {
+      // Handle preflight requests
+      res.status(204).send('');
+      return;
+    }
+
     if (req.method !== 'POST') {
       logger.warn('Method Not Allowed');
       return res.status(405).send('Method Not Allowed');
