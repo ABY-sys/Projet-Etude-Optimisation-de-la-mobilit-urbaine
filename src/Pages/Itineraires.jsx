@@ -35,6 +35,7 @@ const Itineraires = () => {
   const { isLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_API_KEY_PROJECT,
     libraries: ["places"],
+    language: 'fr',
   });  
 
   const [map, setMap] = useState(null);
@@ -97,7 +98,7 @@ const Itineraires = () => {
       duration: step.duration?.text || '',
       travel_mode: step.travel_mode,
       transit: step.travel_mode === "TRANSIT" ? {
-        line: step.transit?.line?.name,
+        line: step.transit?.line?.short_name || step.transit?.line?.name ,
         departure: step.transit?.departure_time?.text || '',
         arrival: step.transit?.arrival_time?.text || '',
         num_stops: step.transit?.num_stops || 0
@@ -311,5 +312,4 @@ const Itineraires = () => {
     </div>
   );
 };
-
 export default Itineraires;

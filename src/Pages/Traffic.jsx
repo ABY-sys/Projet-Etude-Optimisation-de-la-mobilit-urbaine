@@ -1,6 +1,47 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+
+// Importez les images des plans de ligne
+import rerAMap from '../Images/RER A.png';
+import rerBMap from '../Images/RER B.png';
+import rerCMap from '../Images/RER C.png';
+import rerDMap from '../Images/RER D.png';
+import rerEMap from '../Images/RER E.png';
+import m1Map from '../Images/M1.png';
+import m2Map from '../Images/M2.png';
+import m3Map from '../Images/M3.png';
+import m3bMap from '../Images/M3b.png';
+import m4Map from '../Images/M4.png';
+import m5Map from '../Images/M5.png';
+import m6Map from '../Images/M6.png';
+import m7Map from '../Images/M7.png';
+import m8Map from '../Images/M8.png';
+import m9Map from '../Images/M9.png';
+import m10Map from '../Images/M10.png';
+import m11Map from '../Images/M11.png';
+import m12Map from '../Images/M12.png';
+import m13Map from '../Images/M13.png';
+import m14Map from '../Images/M14.png';
+import trainHMap from '../Images/TRAIN H.png';
+import trainJMap from '../Images/TRAIN J.png';
+import trainKMap from '../Images/TRAIN K.png';
+import trainLMap from '../Images/TRAIN L.png';
+import tram1Map from '../Images/TRAM 1.png';
+import tram2Map from '../Images/TRAM 2.png';
+import tram3aMap from '../Images/TRAM 3a.png';
+import tram3bMap from '../Images/TRAM 3b.png';
+import tram4Map from '../Images/TRAM 4.png';
+import tram5Map from '../Images/TRAM 5.png';
+import tram6Map from '../Images/TRAM 6.png';
+import tram7Map from '../Images/TRAM 7.png';
+import tram8Map from '../Images/TRAM 8.png';
+import tram9Map from '../Images/TRAM 9.png';
+import tram11Map from '../Images/TRAM 11.png';
+import tram13Map from '../Images/TRAM 13.png';
+
 
 import rerIcon from '../Images/Paris_transit_icons_-_RER.svg.png';
 import metroIcon from '../Images/Paris_transit_icons_-_Métro.svg.png'; 
@@ -112,22 +153,72 @@ const TRANSPORTS = {
     { name: "V", icon: lineVIcon },
   ],
 };
+// Mapping des images de plan de ligne
+const lineMaps = {
+  // RER - utilisez les mêmes noms que vos imports d'icônes
+  [lineRERAIcon]: rerAMap,
+  [lineRERBIcon]: rerBMap,
+  [lineRERCIcon]: rerCMap,
+  [lineRERDIcon]: rerDMap,
+  [lineREREIcon]: rerEMap,
+  
+  // Métro
+  [lineM1Icon]: m1Map,
+  [lineM2Icon]: m2Map,
+  [lineM3bisIcon]: m3bMap,
+  [lineM4Icon]: m4Map,
+  [lineM5Icon]: m5Map,
+  [lineM6Icon]: m6Map,
+  [lineM7Icon]: m7Map,
+  [lineM8Icon]: m8Map,
+  [lineM9Icon]: m9Map,
+  [lineM10Icon]: m10Map,
+  [lineM11Icon]: m11Map,
+  [lineM12Icon]: m12Map,
+  [lineM13Icon]: m13Map,
+  [lineM14Icon]: m14Map,
+  
+  // Tram
+  [lineT1Icon]: tram1Map,
+  [lineT2Icon]: tram2Map,
+  [lineT3aIcon]: tram3aMap,
+  [lineT3bIcon]: tram3bMap,
+  [lineT4Icon]: tram4Map,
+  [lineT5Icon]: tram5Map,
+  [lineT6Icon]: tram6Map,
+  [lineT7Icon]: tram7Map,
+  [lineT8Icon]: tram8Map,
+  [lineT9Icon]: tram9Map,
+  [lineT11Icon]: tram11Map,
+  [lineT13Icon]: tram13Map,
+  
+  // Train
+  [lineHIcon]: trainHMap,
+  [lineJIcon]: trainJMap,
+  [lineKIcon]: trainKMap,
+  [lineLIcon]: trainLMap,
+};
 
 const Traffic = () => {
   const [selectedTab, setSelectedTab] = useState("General");
-  const [selectedLine, setSelectedLine] = useState(null);  // { type: 'Metro', name: '1' }
+  const [selectedLine, setSelectedLine] = useState(null); 
   const [sideView, setSideView] = useState("line");
   const [currentTime, setCurrentTime] = useState("");
+  const { lineType, lineId } = useParams();
+  
+  const lineImage = selectedLine 
+  ? lineMaps[TRANSPORTS[selectedLine.type].find(l => l.name === selectedLine.name).icon]
+  : null;
 
   useEffect(() => {
     updateCurrentTime();
-    const timer = setInterval(updateCurrentTime, 10000); // actualisation toutes les 10s
+    const timer = setInterval(updateCurrentTime, 10000); 
     return () => clearInterval(timer);
   }, []);
 
   const updateCurrentTime = () => {
     const now = new Date();
-    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const options = { hour: '2-digit', minute: '2-digit'};
     setCurrentTime(now.toLocaleTimeString([], options));
   };
 
@@ -195,21 +286,7 @@ const Traffic = () => {
           <div className="traffic-block">
             {selectedTab === "General" && (
               <>
-                <h5 className="mb-3 d-flex align-items-center">
-                  Situation du trafic sur les transports en Île-de-France
-                  <button
-                    onClick={updateCurrentTime}
-                    className="traffic-refresh ms-2 p-0 border-0 bg-danger"
-                    aria-label="Refresh"
-                  >
-                    <img
-                      src={clockIcon}
-                      alt="Refresh"
-                      style={{ width: 24, height: 24 }}
-                    />
-                  </button>
-                </h5>
-                <p className="mb-3 text-white">
+                <p className="mb-3 text-dark">
                   {currentTime && `Données mises à jour à ${currentTime}`}
                 </p>
               </>
@@ -294,7 +371,7 @@ const Traffic = () => {
                   }`}
                   onClick={() => setSideView("traffic")}
                 >
-                  Infos trafic
+                  Infos carte
                 </button>
               </div>
 
@@ -349,13 +426,36 @@ const Traffic = () => {
                   </div>
                 )}
                 {sideView === "traffic" && (
-                  <div>
-                    <h5>État du trafic - Ligne {selectedLine.name}</h5>
-                    <div className="alert alert-info">
-                      Fonctionnalité à venir - Les informations trafic en temps réel seront affichées ici.
-                    </div>
+                <>
+                  <h4 className="frame-title">Plan de la ligne</h4>
+                  <div className="frame-content">
+                    {lineImage ? (
+                      <img 
+                        src={lineImage} 
+                        alt={`Plan de la ligne ${selectedLine?.name}`}
+                        className="img-fluid line-map-image"
+                        style={{ 
+                          width: '100%',
+                          height: 'auto',
+                          objectFit: 'contain',
+                          border: '1px solid #eee',
+                          borderRadius: '4px'
+                        }}
+                      />
+                    ) : (
+                      <div className="no-map-available alert alert-warning">
+                        Plan de ligne non disponible pour {selectedLine?.type} {selectedLine?.name}
+                      </div>
+                    )}
                   </div>
-                )}
+                  {lineImage && (
+                    <div className="frame-footer text-end">
+                      <small className="text-muted">Cliquez pour agrandir</small>
+                    </div>
+                  )}
+                </>
+              )}
+
               </div>
             </div>
           )}

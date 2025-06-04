@@ -4,6 +4,7 @@ import { auth, db } from "../firebase";
 import { signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import styles from './Header.module.css';
+import logoImage from '../Images/logo.png';
 
 const Header = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -50,7 +51,7 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg bg-white fixed-top">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src="Images/logo.png" alt="Logo" className="navbar-logo" />
+          <img src={logoImage} alt="Logo" className="navbar-logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -70,9 +71,6 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link className={styles.navLink} to="/Traffic">Trafic</Link>
-            </li>
-            <li className="nav-item">
-              <Link className={styles.navLink} to="/test">test</Link>
             </li>
           </ul>
           {!onAuthPage && (

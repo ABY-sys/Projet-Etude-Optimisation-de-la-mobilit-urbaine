@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import AddressInput from "../Components/AddressInput"; 
 import '../index.css';
+import gareImage from '../Images/gare.jpg';
 
 // Importation des icônes
 import rerIcon from '../Images/Paris_transit_icons_-_RER.svg.png';
@@ -207,7 +208,7 @@ const Home = () => {
         <h1>Accueil</h1>
 
         <div className="gare-section">
-          <img src="../Images/background_home_page.jpg" alt="Gare" className="gare-image" />
+          <img src={gareImage} alt="Gare" className="gare-image" />
           <div className="form-container">
             <h2 className="form-title text-center">Où allez-vous?</h2>
             <form onSubmit={handleSearch}>

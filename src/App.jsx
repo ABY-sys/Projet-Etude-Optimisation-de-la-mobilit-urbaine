@@ -5,8 +5,7 @@ import Home from "./Pages/Home";
 import Connexion from "./Pages/Connexion";
 import Inscription from "./Pages/Inscription";
 import Itineraires from "./Pages/Itineraires";
-import Traffic from "./Pages/Traffic"; // Renommé ici
-import TestMap from "./Pages/test";
+import Traffic from "./Pages/Traffic";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         <Route path="/Inscription" element={<Inscription />} />
         <Route path="/Itineraires" element={<Itineraires />} />
         <Route path="/Traffic" element={<Traffic />} /> 
-        <Route path="/test" element={<TestMap />} />
       </Routes>
     </Router>
   );
