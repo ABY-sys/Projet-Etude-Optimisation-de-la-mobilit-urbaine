@@ -128,7 +128,76 @@ html, body {
   color: #6c757d; /* Couleur grise pour le texte d'information */
   margin-top: 10px;
 }
+/* Styles pour la section trafic */
+.traffic-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
 
+.traffic-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.traffic-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.transport-category {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transport-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.transport-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.transport-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.transport-lines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.line-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.5rem;
+}
+
+.traffic-update-time {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}
 /* Formulaire */
 .itinerary-controls {
   background: white;

@@ -34,7 +34,7 @@ const Inscription = () => {
       }, 1000);
     } catch (error) {
       console.error("Erreur à l'inscription :", error.message);
-      setMessage("Erreur : " + error.message); // Affiche l'erreur à l'utilisateur
+      setMessage("Erreur : " + error.message); 
     }
   };
 
